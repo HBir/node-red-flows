@@ -8,12 +8,6 @@
         "env": []
     },
     {
-        "id": "38e187c8c78574c5",
-        "type": "ikea-connection",
-        "address": "10.1.0.36",
-        "name": "tradfri_code"
-    },
-    {
         "id": "036fc0a2e35ba47f",
         "type": "ikea-connection",
         "address": "10.1.0.36",
