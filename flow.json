@@ -1,1 +1,39 @@
-[]
+[
+    {
+        "id": "d117d1b62f7d086e",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "38e187c8c78574c5",
+        "type": "ikea-connection",
+        "address": "10.1.0.36",
+        "name": "tradfri_code"
+    },
+    {
+        "id": "036fc0a2e35ba47f",
+        "type": "ikea-connection",
+        "address": "10.1.0.36",
+        "name": "tradfri_psk"
+    },
+    {
+        "id": "6ba1029f3db5329a",
+        "type": "ikea-homesmart",
+        "z": "d117d1b62f7d086e",
+        "name": "",
+        "deviceId": "None",
+        "deviceName": "None",
+        "deviceType": "ikea-groups",
+        "deviceIcon": "font-awesome/fa-sitemap",
+        "connection": "036fc0a2e35ba47f",
+        "observe": false,
+        "x": 750,
+        "y": 380,
+        "wires": [
+            []
+        ]
+    }
+]
