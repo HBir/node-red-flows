@@ -30,10 +30,12 @@
         "deviceIcon": "font-awesome/fa-sitemap",
         "connection": "036fc0a2e35ba47f",
         "observe": false,
-        "x": 770,
+        "x": 570,
         "y": 380,
         "wires": [
-            []
+            [
+                "2a503a1eee279ccf"
+            ]
         ]
     },
     {
@@ -52,5 +54,18 @@
                 "6ba1029f3db5329a"
             ]
         ]
+    },
+    {
+        "id": "2a503a1eee279ccf",
+        "type": "http response",
+        "z": "d117d1b62f7d086e",
+        "name": "",
+        "statusCode": "",
+        "headers": {
+            "content-type": "text/plain"
+        },
+        "x": 870,
+        "y": 380,
+        "wires": []
     }
 ]
