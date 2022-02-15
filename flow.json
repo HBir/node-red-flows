@@ -234,7 +234,7 @@
         "z": "d117d1b62f7d086e",
         "command": "ls",
         "addpay": "",
-        "append": "/home/pi",
+        "append": "",
         "useSpawn": "false",
         "timer": "",
         "winHide": false,
@@ -243,10 +243,10 @@
         "x": 490,
         "y": 800,
         "wires": [
-            [],
             [
                 "29de00b914491ba6"
             ],
+            [],
             []
         ]
     }
