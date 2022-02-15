@@ -239,7 +239,7 @@
         "id": "4c51ad546a7eb299",
         "type": "exec",
         "z": "d117d1b62f7d086e",
-        "command": "/home/pi/Scripts/systemstatus",
+        "command": "ls",
         "addpay": "",
         "append": "",
         "useSpawn": "false",
@@ -247,7 +247,7 @@
         "winHide": false,
         "oldrc": false,
         "name": "",
-        "x": 550,
+        "x": 470,
         "y": 800,
         "wires": [
             [],
