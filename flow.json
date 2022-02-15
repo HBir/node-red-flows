@@ -164,7 +164,8 @@
         "y": 780,
         "wires": [
             [
-                "33ad6535cb0c8118"
+                "33ad6535cb0c8118",
+                "29de00b914491ba6"
             ]
         ]
     },
@@ -231,7 +232,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 750,
-        "y": 780,
+        "y": 720,
         "wires": []
     },
     {
@@ -246,7 +247,7 @@
         "connection": "036fc0a2e35ba47f",
         "observe": false,
         "x": 570,
-        "y": 780,
+        "y": 820,
         "wires": [
             [
                 "29de00b914491ba6"
