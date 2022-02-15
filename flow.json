@@ -158,7 +158,7 @@
         "y": 760,
         "wires": [
             [
-                "206d03467ee1456a"
+                "4c51ad546a7eb299"
             ]
         ]
     },
@@ -244,27 +244,10 @@
         "y": 800,
         "wires": [
             [],
-            [],
-            []
-        ]
-    },
-    {
-        "id": "206d03467ee1456a",
-        "type": "file in",
-        "z": "d117d1b62f7d086e",
-        "name": "",
-        "filename": "/home/pi/Scripts/systemstatus",
-        "format": "utf8",
-        "chunk": false,
-        "sendError": false,
-        "encoding": "none",
-        "allProps": false,
-        "x": 530,
-        "y": 700,
-        "wires": [
             [
                 "29de00b914491ba6"
-            ]
+            ],
+            []
         ]
     }
 ]
