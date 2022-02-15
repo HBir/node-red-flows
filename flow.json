@@ -147,7 +147,7 @@
         "id": "bbb819c657a4c05a",
         "type": "inject",
         "z": "d117d1b62f7d086e",
-        "name": "jk",
+        "name": "trigger",
         "props": [],
         "repeat": "",
         "crontab": "",
