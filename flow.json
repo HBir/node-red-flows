@@ -178,7 +178,7 @@
             ],
             [],
             [
-                "724e8308712fb0fa"
+                "f91bb764d6310264"
             ]
         ]
     },
@@ -264,7 +264,7 @@
         "z": "d117d1b62f7d086e",
         "name": "",
         "property": "payload",
-        "action": "obj",
+        "action": "str",
         "pretty": false,
         "x": 690,
         "y": 720,
