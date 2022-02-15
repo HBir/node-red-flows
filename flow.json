@@ -233,7 +233,7 @@
         "type": "exec",
         "z": "d117d1b62f7d086e",
         "command": "ls /home/pi",
-        "addpay": "",
+        "addpay": "payload",
         "append": "",
         "useSpawn": "false",
         "timer": "",
