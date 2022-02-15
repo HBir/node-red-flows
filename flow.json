@@ -89,8 +89,8 @@
         "method": "get",
         "upload": false,
         "swaggerDoc": "",
-        "x": 320,
-        "y": 640,
+        "x": 260,
+        "y": 800,
         "wires": [
             [
                 "ef4e1f187973c37e"
@@ -121,28 +121,9 @@
         "name": "",
         "statusCode": "200",
         "headers": {},
-        "x": 760,
-        "y": 600,
+        "x": 780,
+        "y": 820,
         "wires": []
-    },
-    {
-        "id": "bbb819c657a4c05a",
-        "type": "inject",
-        "z": "d117d1b62f7d086e",
-        "name": "trigger",
-        "props": [],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "x": 350,
-        "y": 760,
-        "wires": [
-            [
-                "4c51ad546a7eb299"
-            ]
-        ]
     },
     {
         "id": "3ea589fd2b313663",
@@ -177,45 +158,6 @@
         "wires": []
     },
     {
-        "id": "29de00b914491ba6",
-        "type": "debug",
-        "z": "d117d1b62f7d086e",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 750,
-        "y": 720,
-        "wires": []
-    },
-    {
-        "id": "4c51ad546a7eb299",
-        "type": "exec",
-        "z": "d117d1b62f7d086e",
-        "command": "NOCOLOR=true ./Scripts/systemstatus",
-        "addpay": "",
-        "append": "",
-        "useSpawn": "false",
-        "timer": "",
-        "winHide": false,
-        "oldrc": false,
-        "name": "",
-        "x": 600,
-        "y": 800,
-        "wires": [
-            [
-                "29de00b914491ba6"
-            ],
-            [],
-            []
-        ]
-    },
-    {
         "id": "ef4e1f187973c37e",
         "type": "exec",
         "z": "d117d1b62f7d086e",
@@ -227,8 +169,8 @@
         "winHide": false,
         "oldrc": false,
         "name": "",
-        "x": 560,
-        "y": 580,
+        "x": 520,
+        "y": 800,
         "wires": [
             [
                 "2988cc719fb018ac",
@@ -247,12 +189,12 @@
         "tosidebar": true,
         "console": false,
         "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
+        "complete": "payload",
+        "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 730,
-        "y": 540,
+        "x": 790,
+        "y": 760,
         "wires": []
     }
 ]
