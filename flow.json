@@ -160,12 +160,11 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
-        "x": 410,
-        "y": 780,
+        "x": 350,
+        "y": 760,
         "wires": [
             [
-                "29de00b914491ba6",
-                "d3e39f1b892778f5"
+                "4c51ad546a7eb299"
             ]
         ]
     },
@@ -236,20 +235,25 @@
         "wires": []
     },
     {
-        "id": "d3e39f1b892778f5",
-        "type": "random",
+        "id": "4c51ad546a7eb299",
+        "type": "exec",
         "z": "d117d1b62f7d086e",
+        "command": "/home/pi/Scripts/systemstatus",
+        "addpay": "",
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "winHide": false,
+        "oldrc": false,
         "name": "",
-        "low": 1,
-        "high": 10,
-        "inte": "true",
-        "property": "payload",
-        "x": 600,
+        "x": 550,
         "y": 800,
         "wires": [
+            [],
             [
                 "29de00b914491ba6"
-            ]
+            ],
+            []
         ]
     }
 ]
