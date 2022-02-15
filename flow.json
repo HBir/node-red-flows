@@ -106,11 +106,11 @@
         "tosidebar": true,
         "console": false,
         "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
+        "complete": "true",
+        "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 710,
+        "x": 690,
         "y": 260,
         "wires": []
     },
@@ -164,7 +164,7 @@
         "y": 780,
         "wires": [
             [
-                "29de00b914491ba6"
+                "33ad6535cb0c8118"
             ]
         ]
     },
@@ -177,11 +177,12 @@
         "tosidebar": true,
         "console": false,
         "tostatus": false,
-        "complete": "false",
+        "complete": "true",
+        "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
         "x": 610,
-        "y": 600,
+        "y": 580,
         "wires": []
     },
     {
@@ -208,10 +209,11 @@
         "tosidebar": true,
         "console": false,
         "tostatus": false,
-        "complete": "false",
+        "complete": "true",
+        "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 350,
+        "x": 330,
         "y": 520,
         "wires": []
     },
@@ -231,5 +233,24 @@
         "x": 750,
         "y": 780,
         "wires": []
+    },
+    {
+        "id": "33ad6535cb0c8118",
+        "type": "ikea-homesmart",
+        "z": "d117d1b62f7d086e",
+        "name": "Mirror lamps",
+        "deviceId": "65575",
+        "deviceName": "Mirror lamps",
+        "deviceType": "ikea-plugs",
+        "deviceIcon": "font-awesome/fa-plug",
+        "connection": "036fc0a2e35ba47f",
+        "observe": false,
+        "x": 570,
+        "y": 780,
+        "wires": [
+            [
+                "29de00b914491ba6"
+            ]
+        ]
     }
 ]
