@@ -196,5 +196,36 @@
         "x": 790,
         "y": 760,
         "wires": []
+    },
+    {
+        "id": "f28bc0dc4af57029",
+        "type": "status",
+        "z": "d117d1b62f7d086e",
+        "name": "",
+        "scope": null,
+        "x": 380,
+        "y": 680,
+        "wires": [
+            [
+                "42c920e8031cbe7c"
+            ]
+        ]
+    },
+    {
+        "id": "42c920e8031cbe7c",
+        "type": "debug",
+        "z": "d117d1b62f7d086e",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 530,
+        "y": 680,
+        "wires": []
     }
 ]
