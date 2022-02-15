@@ -164,7 +164,7 @@
         "y": 780,
         "wires": [
             [
-                "f613a0a52abde81f"
+                "29de00b914491ba6"
             ]
         ]
     },
@@ -183,25 +183,6 @@
         "x": 610,
         "y": 600,
         "wires": []
-    },
-    {
-        "id": "f613a0a52abde81f",
-        "type": "ikea-homesmart",
-        "z": "d117d1b62f7d086e",
-        "name": "Mirror lamps",
-        "deviceId": "65575",
-        "deviceName": "Mirror lamps",
-        "deviceType": "ikea-plugs",
-        "deviceIcon": "font-awesome/fa-plug",
-        "connection": "036fc0a2e35ba47f",
-        "observe": false,
-        "x": 590,
-        "y": 780,
-        "wires": [
-            [
-                "29de00b914491ba6"
-            ]
-        ]
     },
     {
         "id": "3ea589fd2b313663",
