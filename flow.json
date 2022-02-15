@@ -36,11 +36,11 @@
         "type": "http response",
         "z": "d117d1b62f7d086e",
         "name": "",
-        "statusCode": "",
+        "statusCode": "200",
         "headers": {
             "content-type": "text/plain"
         },
-        "x": 750,
+        "x": 760,
         "y": 380,
         "wires": []
     },
@@ -90,9 +90,11 @@
         "upload": false,
         "swaggerDoc": "",
         "x": 320,
-        "y": 520,
+        "y": 640,
         "wires": [
-            []
+            [
+                "dd3f8062ea317710"
+            ]
         ]
     },
     {
@@ -110,6 +112,34 @@
         "statusType": "auto",
         "x": 610,
         "y": 520,
+        "wires": []
+    },
+    {
+        "id": "dd3f8062ea317710",
+        "type": "json",
+        "z": "d117d1b62f7d086e",
+        "name": "test",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 470,
+        "y": 640,
+        "wires": [
+            [
+                "2988cc719fb018ac"
+            ]
+        ],
+        "info": "test"
+    },
+    {
+        "id": "2988cc719fb018ac",
+        "type": "http response",
+        "z": "d117d1b62f7d086e",
+        "name": "",
+        "statusCode": "200",
+        "headers": {},
+        "x": 620,
+        "y": 640,
         "wires": []
     }
 ]
