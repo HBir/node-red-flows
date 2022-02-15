@@ -22,62 +22,10 @@
         "method": "get",
         "upload": false,
         "swaggerDoc": "",
-        "x": 350,
-        "y": 380,
+        "x": 250,
+        "y": 660,
         "wires": [
-            [
-                "3353e6e330c7b718",
-                "a7a2e7eda02fb68c"
-            ]
-        ]
-    },
-    {
-        "id": "2a503a1eee279ccf",
-        "type": "http response",
-        "z": "d117d1b62f7d086e",
-        "name": "",
-        "statusCode": "200",
-        "headers": {
-            "content-type": "text/plain"
-        },
-        "x": 760,
-        "y": 380,
-        "wires": []
-    },
-    {
-        "id": "a7a2e7eda02fb68c",
-        "type": "json",
-        "z": "d117d1b62f7d086e",
-        "name": "test",
-        "property": "payload",
-        "action": "",
-        "pretty": false,
-        "x": 550,
-        "y": 300,
-        "wires": [
-            [
-                "2a503a1eee279ccf"
-            ]
-        ],
-        "info": "test"
-    },
-    {
-        "id": "3353e6e330c7b718",
-        "type": "ikea-homesmart",
-        "z": "d117d1b62f7d086e",
-        "name": "Mirror lamps",
-        "deviceId": "65575",
-        "deviceName": "Mirror lamps",
-        "deviceType": "ikea-plugs",
-        "deviceIcon": "font-awesome/fa-plug",
-        "connection": "036fc0a2e35ba47f",
-        "observe": false,
-        "x": 550,
-        "y": 380,
-        "wires": [
-            [
-                "a9ca8f19b827d378"
-            ]
+            []
         ]
     },
     {
@@ -98,23 +46,6 @@
         ]
     },
     {
-        "id": "a9ca8f19b827d378",
-        "type": "debug",
-        "z": "d117d1b62f7d086e",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 690,
-        "y": 260,
-        "wires": []
-    },
-    {
         "id": "2988cc719fb018ac",
         "type": "http response",
         "z": "d117d1b62f7d086e",
@@ -132,8 +63,8 @@
         "name": "",
         "scope": null,
         "uncaught": false,
-        "x": 260,
-        "y": 440,
+        "x": 100,
+        "y": 980,
         "wires": [
             [
                 "04c6ca6dc91092d7"
@@ -153,8 +84,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 330,
-        "y": 520,
+        "x": 230,
+        "y": 980,
         "wires": []
     },
     {
@@ -203,8 +134,8 @@
         "z": "d117d1b62f7d086e",
         "name": "",
         "scope": null,
-        "x": 380,
-        "y": 680,
+        "x": 100,
+        "y": 1020,
         "wires": [
             [
                 "42c920e8031cbe7c"
@@ -224,8 +155,68 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 530,
-        "y": 680,
+        "x": 230,
+        "y": 1020,
+        "wires": []
+    },
+    {
+        "id": "b105de4f5f807779",
+        "type": "inject",
+        "z": "d117d1b62f7d086e",
+        "name": "",
+        "props": [
+            {
+                "p": "onOff",
+                "v": "true",
+                "vt": "bool"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 230,
+        "y": 520,
+        "wires": [
+            [
+                "8acda703ada39466",
+                "1c8c8a7c37c0292c"
+            ]
+        ]
+    },
+    {
+        "id": "8acda703ada39466",
+        "type": "ikea-homesmart",
+        "z": "d117d1b62f7d086e",
+        "name": "",
+        "deviceId": "65575",
+        "deviceName": "Mirror lamps",
+        "deviceType": "ikea-plugs",
+        "deviceIcon": "font-awesome/fa-plug",
+        "connection": "036fc0a2e35ba47f",
+        "observe": true,
+        "x": 410,
+        "y": 520,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "1c8c8a7c37c0292c",
+        "type": "debug",
+        "z": "d117d1b62f7d086e",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 370,
+        "y": 460,
         "wires": []
     }
 ]
