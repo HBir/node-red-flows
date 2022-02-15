@@ -93,7 +93,7 @@
         "y": 640,
         "wires": [
             [
-                "dd3f8062ea317710"
+                "ef4e1f187973c37e"
             ]
         ]
     },
@@ -115,32 +115,14 @@
         "wires": []
     },
     {
-        "id": "dd3f8062ea317710",
-        "type": "json",
-        "z": "d117d1b62f7d086e",
-        "name": "test",
-        "property": "payload",
-        "action": "",
-        "pretty": false,
-        "x": 470,
-        "y": 640,
-        "wires": [
-            [
-                "2988cc719fb018ac",
-                "98c1bde31e23482c"
-            ]
-        ],
-        "info": "test"
-    },
-    {
         "id": "2988cc719fb018ac",
         "type": "http response",
         "z": "d117d1b62f7d086e",
         "name": "",
         "statusCode": "200",
         "headers": {},
-        "x": 620,
-        "y": 640,
+        "x": 760,
+        "y": 600,
         "wires": []
     },
     {
@@ -161,23 +143,6 @@
                 "4c51ad546a7eb299"
             ]
         ]
-    },
-    {
-        "id": "98c1bde31e23482c",
-        "type": "debug",
-        "z": "d117d1b62f7d086e",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 610,
-        "y": 580,
-        "wires": []
     },
     {
         "id": "3ea589fd2b313663",
@@ -245,6 +210,28 @@
         "wires": [
             [
                 "29de00b914491ba6"
+            ],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "ef4e1f187973c37e",
+        "type": "exec",
+        "z": "d117d1b62f7d086e",
+        "command": "/home/pi/Scripts/systemstatus",
+        "addpay": "",
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "winHide": false,
+        "oldrc": false,
+        "name": "",
+        "x": 530,
+        "y": 580,
+        "wires": [
+            [
+                "2988cc719fb018ac"
             ],
             [],
             []
