@@ -150,11 +150,9 @@
         "name": "",
         "props": [
             {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
+                "p": "onOff",
+                "v": "false",
+                "vt": "bool"
             }
         ],
         "repeat": "",
@@ -162,13 +160,11 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 460,
-        "y": 700,
+        "x": 410,
+        "y": 780,
         "wires": [
             [
-                "2988cc719fb018ac"
+                "f613a0a52abde81f"
             ]
         ]
     },
@@ -187,5 +183,22 @@
         "x": 610,
         "y": 600,
         "wires": []
+    },
+    {
+        "id": "f613a0a52abde81f",
+        "type": "ikea-homesmart",
+        "z": "d117d1b62f7d086e",
+        "name": "Mirror lamps",
+        "deviceId": "65575",
+        "deviceName": "Mirror lamps",
+        "deviceType": "ikea-plugs",
+        "deviceIcon": "font-awesome/fa-plug",
+        "connection": "036fc0a2e35ba47f",
+        "observe": false,
+        "x": 590,
+        "y": 780,
+        "wires": [
+            []
+        ]
     }
 ]
