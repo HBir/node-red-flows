@@ -173,7 +173,8 @@
         "y": 800,
         "wires": [
             [
-                "966d2ffccfa8ed26"
+                "966d2ffccfa8ed26",
+                "2988cc719fb018ac"
             ],
             [
                 "966d2ffccfa8ed26"
