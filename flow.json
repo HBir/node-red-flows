@@ -17,12 +17,12 @@
         "id": "50afe6393fb38787",
         "type": "http in",
         "z": "d117d1b62f7d086e",
-        "name": "tradfri http",
+        "name": "/tradfri",
         "url": "/tradfri",
         "method": "get",
         "upload": false,
         "swaggerDoc": "",
-        "x": 360,
+        "x": 350,
         "y": 380,
         "wires": [
             [
@@ -62,23 +62,6 @@
         "info": "test"
     },
     {
-        "id": "41738de8b949a33c",
-        "type": "split",
-        "z": "d117d1b62f7d086e",
-        "name": "",
-        "splt": "\\n",
-        "spltType": "str",
-        "arraySplt": 1,
-        "arraySpltType": "len",
-        "stream": false,
-        "addname": "",
-        "x": 390,
-        "y": 220,
-        "wires": [
-            []
-        ]
-    },
-    {
         "id": "3353e6e330c7b718",
         "type": "ikea-homesmart",
         "z": "d117d1b62f7d086e",
@@ -93,8 +76,39 @@
         "y": 380,
         "wires": [
             [
-                "2a503a1eee279ccf"
+                "a9ca8f19b827d378"
             ]
         ]
+    },
+    {
+        "id": "e0be295598db064b",
+        "type": "http in",
+        "z": "d117d1b62f7d086e",
+        "name": "/pistatus",
+        "url": "/pistatus",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 320,
+        "y": 520,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "a9ca8f19b827d378",
+        "type": "debug",
+        "z": "d117d1b62f7d086e",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 610,
+        "y": 520,
+        "wires": []
     }
 ]
