@@ -17,15 +17,17 @@
         "id": "50afe6393fb38787",
         "type": "http in",
         "z": "d117d1b62f7d086e",
-        "name": "/tradfri",
-        "url": "/tradfri",
+        "name": "/tradfri/mirror_lamps",
+        "url": "/tradfri/mirror_lamps",
         "method": "get",
         "upload": false,
         "swaggerDoc": "",
-        "x": 250,
-        "y": 660,
+        "x": 110,
+        "y": 640,
         "wires": [
-            []
+            [
+                "e51696fdf2c871ae"
+            ]
         ]
     },
     {
@@ -176,7 +178,7 @@
         "topic": "",
         "payload": "{\"onOff\":true}",
         "payloadType": "json",
-        "x": 250,
+        "x": 190,
         "y": 520,
         "wires": [
             [
@@ -195,7 +197,7 @@
         "deviceType": "ikea-plugs",
         "deviceIcon": "font-awesome/fa-plug",
         "connection": "036fc0a2e35ba47f",
-        "observe": true,
+        "observe": false,
         "x": 410,
         "y": 520,
         "wires": [
@@ -239,24 +241,63 @@
         "wires": []
     },
     {
-        "id": "dc01a42d3c756045",
-        "type": "catch",
+        "id": "ca4355f86d3d201f",
+        "type": "ikea-homesmart",
         "z": "d117d1b62f7d086e",
         "name": "",
-        "scope": [
-            "8acda703ada39466"
-        ],
-        "uncaught": false,
-        "x": 420,
-        "y": 580,
+        "deviceId": "65575",
+        "deviceName": "Mirror lamps",
+        "deviceType": "ikea-plugs",
+        "deviceIcon": "font-awesome/fa-plug",
+        "connection": "036fc0a2e35ba47f",
+        "observe": false,
+        "x": 430,
+        "y": 640,
         "wires": [
             [
-                "506d575aea3f0774"
+                "4b08f95d0f230ade",
+                "5a337023adc74564"
             ]
         ]
     },
     {
-        "id": "506d575aea3f0774",
+        "id": "020c3f1ea37139dc",
+        "type": "function",
+        "z": "d117d1b62f7d086e",
+        "name": "",
+        "func": "\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 240,
+        "y": 580,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e51696fdf2c871ae",
+        "type": "template",
+        "z": "d117d1b62f7d086e",
+        "name": "status",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "json",
+        "syntax": "plain",
+        "template": "status",
+        "output": "str",
+        "x": 290,
+        "y": 640,
+        "wires": [
+            [
+                "ca4355f86d3d201f"
+            ]
+        ]
+    },
+    {
+        "id": "5a337023adc74564",
         "type": "debug",
         "z": "d117d1b62f7d086e",
         "name": "",
@@ -268,8 +309,19 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 570,
-        "y": 580,
+        "x": 590,
+        "y": 660,
+        "wires": []
+    },
+    {
+        "id": "4b08f95d0f230ade",
+        "type": "http response",
+        "z": "d117d1b62f7d086e",
+        "name": "",
+        "statusCode": "200",
+        "headers": {},
+        "x": 600,
+        "y": 620,
         "wires": []
     }
 ]
