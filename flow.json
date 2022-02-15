@@ -164,8 +164,7 @@
         "y": 760,
         "wires": [
             [
-                "4c51ad546a7eb299",
-                "29de00b914491ba6"
+                "4c51ad546a7eb299"
             ]
         ]
     },
@@ -239,7 +238,7 @@
         "id": "4c51ad546a7eb299",
         "type": "exec",
         "z": "d117d1b62f7d086e",
-        "command": "ls",
+        "command": "ls /home/pi",
         "addpay": "",
         "append": "",
         "useSpawn": "false",
@@ -247,7 +246,7 @@
         "winHide": false,
         "oldrc": false,
         "name": "",
-        "x": 470,
+        "x": 490,
         "y": 800,
         "wires": [
             [],
