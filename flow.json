@@ -165,7 +165,7 @@
         "wires": [
             [
                 "29de00b914491ba6",
-                "7347aea6c8f921b9"
+                "d3e39f1b892778f5"
             ]
         ]
     },
@@ -236,17 +236,16 @@
         "wires": []
     },
     {
-        "id": "7347aea6c8f921b9",
-        "type": "html",
+        "id": "d3e39f1b892778f5",
+        "type": "random",
         "z": "d117d1b62f7d086e",
         "name": "",
-        "property": "onOff",
-        "outproperty": "payload",
-        "tag": "",
-        "ret": "html",
-        "as": "single",
-        "x": 590,
-        "y": 780,
+        "low": 1,
+        "high": 10,
+        "inte": "true",
+        "property": "payload",
+        "x": 600,
+        "y": 800,
         "wires": [
             [
                 "29de00b914491ba6"
