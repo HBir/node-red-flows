@@ -166,9 +166,7 @@
         "name": "",
         "props": [
             {
-                "p": "onOff",
-                "v": "true",
-                "vt": "bool"
+                "p": "payload"
             }
         ],
         "repeat": "",
@@ -176,7 +174,9 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
-        "x": 230,
+        "payload": "{\"onOff\":true}",
+        "payloadType": "json",
+        "x": 250,
         "y": 520,
         "wires": [
             [
