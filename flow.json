@@ -14,25 +14,6 @@
         "name": "tradfri_psk"
     },
     {
-        "id": "6ba1029f3db5329a",
-        "type": "ikea-homesmart",
-        "z": "d117d1b62f7d086e",
-        "name": "Living room",
-        "deviceId": "131079",
-        "deviceName": "Living room",
-        "deviceType": "ikea-groups",
-        "deviceIcon": "font-awesome/fa-sitemap",
-        "connection": "036fc0a2e35ba47f",
-        "observe": false,
-        "x": 570,
-        "y": 380,
-        "wires": [
-            [
-                "2a503a1eee279ccf"
-            ]
-        ]
-    },
-    {
         "id": "50afe6393fb38787",
         "type": "http in",
         "z": "d117d1b62f7d086e",
@@ -45,7 +26,7 @@
         "y": 380,
         "wires": [
             [
-                "6ba1029f3db5329a"
+                "a7a2e7eda02fb68c"
             ]
         ]
     },
@@ -61,5 +42,21 @@
         "x": 870,
         "y": 380,
         "wires": []
+    },
+    {
+        "id": "a7a2e7eda02fb68c",
+        "type": "json",
+        "z": "d117d1b62f7d086e",
+        "name": "test",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 630,
+        "y": 380,
+        "wires": [
+            [
+                "2a503a1eee279ccf"
+            ]
+        ]
     }
 ]
