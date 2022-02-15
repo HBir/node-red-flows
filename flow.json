@@ -219,7 +219,7 @@
         "id": "ef4e1f187973c37e",
         "type": "exec",
         "z": "d117d1b62f7d086e",
-        "command": "/home/pi/Scripts/systemstatus",
+        "command": "NOCOLOR=true ./Scripts/systemstatus",
         "addpay": "",
         "append": "",
         "useSpawn": "false",
@@ -227,7 +227,7 @@
         "winHide": false,
         "oldrc": false,
         "name": "",
-        "x": 530,
+        "x": 560,
         "y": 580,
         "wires": [
             [
