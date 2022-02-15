@@ -174,12 +174,10 @@
         "wires": [
             [
                 "2988cc719fb018ac",
-                "724e8308712fb0fa"
+                "966d2ffccfa8ed26"
             ],
             [],
-            [
-                "f91bb764d6310264"
-            ]
+            []
         ]
     },
     {
@@ -229,49 +227,5 @@
         "x": 530,
         "y": 680,
         "wires": []
-    },
-    {
-        "id": "f91bb764d6310264",
-        "type": "join",
-        "z": "d117d1b62f7d086e",
-        "name": "",
-        "mode": "custom",
-        "build": "merged",
-        "property": "payload",
-        "propertyType": "msg",
-        "key": "topic",
-        "joiner": "\\n",
-        "joinerType": "str",
-        "accumulate": false,
-        "timeout": "",
-        "count": "2",
-        "reduceRight": false,
-        "reduceExp": "",
-        "reduceInit": "",
-        "reduceInitType": "",
-        "reduceFixup": "",
-        "x": 790,
-        "y": 680,
-        "wires": [
-            [
-                "966d2ffccfa8ed26"
-            ]
-        ]
-    },
-    {
-        "id": "724e8308712fb0fa",
-        "type": "json",
-        "z": "d117d1b62f7d086e",
-        "name": "",
-        "property": "payload",
-        "action": "str",
-        "pretty": false,
-        "x": 690,
-        "y": 720,
-        "wires": [
-            [
-                "f91bb764d6310264"
-            ]
-        ]
     }
 ]
