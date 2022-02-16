@@ -305,9 +305,9 @@
         "type": "http response",
         "z": "d117d1b62f7d086e",
         "name": "",
-        "statusCode": "",
+        "statusCode": "200",
         "headers": {},
-        "x": 430,
+        "x": 440,
         "y": 480,
         "wires": []
     },
