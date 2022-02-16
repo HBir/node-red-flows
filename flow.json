@@ -440,7 +440,7 @@
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "<h3>Groups</h3>\n{{#payload}}\n  <h4>{{name}}</h4>\n  {{#devices}}\n  <div>\n   | {{type}} \n   | {{name}} \n   | {{alive}} \n   \n\n   | <a href=\"http://10.1.0.166:1880/tradfri/{{key}}\">\n    {{#state.isOn}} \n    On\n   {{/state.isOn}} \n   {{^state.isOn}} \n    Off\n   {{/state.isOn}} \n   </a> |\n  </div>\n  {{/devices}}\n{{/payload}}\n",
+        "template": "<h3>Groups</h3>\n{{#payload}}\n  <h4>{{name}}</h4>\n  {{#devices}}\n  <div>\n   | {{name}} \n   | <a href=\"http://10.1.0.166:1880/tradfri/{{key}}\">\n    {{#state.isOn}} \n    On\n   {{/state.isOn}} \n   {{^state.isOn}} \n    Off\n   {{/state.isOn}} \n   | {{type}} \n   | {{alive}} \n   \n   </a> |\n  </div>\n  {{/devices}}\n{{/payload}}\n",
         "output": "str",
         "x": 770,
         "y": 660,
