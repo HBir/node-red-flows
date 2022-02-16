@@ -382,7 +382,7 @@
         "fieldType": "msg",
         "format": "json",
         "syntax": "plain",
-        "template": "{\"payload\": \"success\"}",
+        "template": "{\"payload\": \"success\",\n\"statusCode\": 200}",
         "output": "json",
         "x": 870,
         "y": 640,
