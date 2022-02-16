@@ -414,7 +414,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 970,
-        "y": 800,
+        "y": 820,
         "wires": []
     },
     {
@@ -422,7 +422,7 @@
         "type": "function",
         "z": "d117d1b62f7d086e",
         "name": "",
-        "func": "var globalDeviceList = {};\nglobalDeviceList[msg.payload.name] = msg.topic;\n\nvar newList = {\n    ...global.get(\"globalDeviceList\") || {},\n    ...globalDeviceList\n}\n\n\nglobal.set(\"globalDeviceList\", newList);\n\n\n\n\nreturn {msg, newList};",
+        "func": "const globalDeviceList = {};\nglobalDeviceList[msg.payload.name] = {\n    instanceId: msg.topic,\n    state: msg.payload\n}\n\nconst newList = {\n    ...global.get(\"globalDeviceList\") || {},\n    ...globalDeviceList\n}\n\n\nglobal.set(\"globalDeviceList\", newList);\nreturn {msg, deviceList: newList};",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
