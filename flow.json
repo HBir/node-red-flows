@@ -344,17 +344,36 @@
         ]
     },
     {
-        "id": "f6f142cf241e83ed",
-        "type": "tradfri-light-control",
+        "id": "ee7696134c41259b",
+        "type": "tradfri-switch-control",
         "z": "d117d1b62f7d086e",
         "gateway": "b2fb63b9d77e15a7",
         "name": "",
-        "action": "{\"onOff\":true}",
-        "accessories": [],
+        "action": "on",
+        "accessories": [
+            "65575"
+        ],
         "groups": [],
         "logInputErrors": true,
-        "x": 170,
-        "y": 520,
+        "x": 360,
+        "y": 720,
         "wires": []
+    },
+    {
+        "id": "94f9e5ca27ce82c1",
+        "type": "http in",
+        "z": "d117d1b62f7d086e",
+        "name": "/tradfri/mirror_lamps2",
+        "url": "/tradfri/mirror_lamps2",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 140,
+        "y": 720,
+        "wires": [
+            [
+                "ee7696134c41259b"
+            ]
+        ]
     }
 ]
