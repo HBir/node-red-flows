@@ -316,7 +316,7 @@
         "type": "function",
         "z": "d117d1b62f7d086e",
         "name": "",
-        "func": "\nreturn {statusCode: 201, payload: \"something\"};",
+        "func": "\n//return {statusCode: 201, payload: \"something\"};\nreturn \"something\"",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
