@@ -30,8 +30,8 @@
         "name": "",
         "scope": null,
         "uncaught": false,
-        "x": 180,
-        "y": 1080,
+        "x": 200,
+        "y": 660,
         "wires": [
             [
                 "04c6ca6dc91092d7"
@@ -51,8 +51,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 310,
-        "y": 1080,
+        "x": 330,
+        "y": 660,
         "wires": []
     },
     {
@@ -61,8 +61,8 @@
         "z": "d117d1b62f7d086e",
         "name": "",
         "scope": null,
-        "x": 180,
-        "y": 1140,
+        "x": 200,
+        "y": 720,
         "wires": [
             [
                 "42c920e8031cbe7c"
@@ -78,8 +78,8 @@
         "method": "get",
         "upload": false,
         "swaggerDoc": "",
-        "x": 340,
-        "y": 920,
+        "x": 360,
+        "y": 500,
         "wires": [
             [
                 "039b8253b7696f59"
@@ -103,8 +103,8 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
-        "x": 350,
-        "y": 720,
+        "x": 370,
+        "y": 300,
         "wires": [
             [
                 "039b8253b7696f59"
@@ -117,8 +117,8 @@
         "z": "d117d1b62f7d086e",
         "gateway": "b2fb63b9d77e15a7",
         "name": "",
-        "x": 550,
-        "y": 1080,
+        "x": 570,
+        "y": 660,
         "wires": [
             [
                 "0768e54ac65e1ea0"
@@ -138,8 +138,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 930,
-        "y": 1080,
+        "x": 950,
+        "y": 660,
         "wires": []
     },
     {
@@ -153,8 +153,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 750,
-        "y": 1080,
+        "x": 770,
+        "y": 660,
         "wires": [
             [
                 "4725435ee8826d82"
@@ -172,8 +172,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 740,
-        "y": 1140,
+        "x": 760,
+        "y": 720,
         "wires": [
             [
                 "8974dc3c7d79bbde"
@@ -193,8 +193,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 930,
-        "y": 1140,
+        "x": 950,
+        "y": 720,
         "wires": []
     },
     {
@@ -208,8 +208,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 540,
-        "y": 920,
+        "x": 560,
+        "y": 500,
         "wires": [
             [
                 "2e2c00ca72610f7c",
@@ -231,8 +231,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 710,
-        "y": 980,
+        "x": 730,
+        "y": 560,
         "wires": []
     },
     {
@@ -246,8 +246,8 @@
         "once": true,
         "onceDelay": 0.1,
         "topic": "",
-        "x": 550,
-        "y": 1140,
+        "x": 570,
+        "y": 720,
         "wires": [
             [
                 "77f2a35b96e8c937"
@@ -264,8 +264,8 @@
         "accessories": [],
         "groups": [],
         "logInputErrors": true,
-        "x": 740,
-        "y": 920,
+        "x": 760,
+        "y": 500,
         "wires": []
     },
     {
@@ -285,8 +285,8 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
-        "x": 330,
-        "y": 680,
+        "x": 350,
+        "y": 260,
         "wires": [
             [
                 "039b8253b7696f59"
@@ -310,8 +310,8 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
-        "x": 360,
-        "y": 640,
+        "x": 380,
+        "y": 220,
         "wires": [
             [
                 "039b8253b7696f59"
@@ -325,8 +325,8 @@
         "name": "",
         "statusCode": "",
         "headers": {},
-        "x": 710,
-        "y": 860,
+        "x": 730,
+        "y": 440,
         "wires": []
     },
     {
@@ -335,8 +335,8 @@
         "z": "d117d1b62f7d086e",
         "name": "Debug nodes",
         "info": "",
-        "x": 350,
-        "y": 600,
+        "x": 370,
+        "y": 180,
         "wires": []
     },
     {
@@ -344,9 +344,9 @@
         "type": "comment",
         "z": "d117d1b62f7d086e",
         "name": "TODO:",
-        "info": "Groups onOff status are not updated \nwhen induvidual devices have their status\nchanged.\n\nHack fix for this is to that each time the\nstate of a device is changed, update \nthe global variable state of the device's\ngroup.\n",
-        "x": 550,
-        "y": 840,
+        "info": "Groups onOff status are not updated \nwhen induvidual devices have their status\nchanged.\n\nHack fix for this is to that each time the\nstate of a device is changed, update \nthe global variable state of the device's\ngroup.",
+        "x": 570,
+        "y": 420,
         "wires": []
     },
     {
@@ -362,8 +362,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 310,
-        "y": 1140,
+        "x": 330,
+        "y": 720,
         "wires": []
     },
     {
