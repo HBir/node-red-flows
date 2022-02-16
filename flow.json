@@ -381,8 +381,8 @@
         "fieldType": "msg",
         "format": "json",
         "syntax": "plain",
-        "template": "{\"payload\": \"success\",\n\"statusCode\": 200}",
-        "output": "json",
+        "template": "\"test\"",
+        "output": "str",
         "x": 730,
         "y": 580,
         "wires": [
