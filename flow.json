@@ -362,7 +362,7 @@
         "type": "function",
         "z": "d117d1b62f7d086e",
         "name": "",
-        "func": "const globalDeviceList = {};\nglobalDeviceList[msg.payload.name.toLowerCase()] = {\n    instanceId: msg.topic,\n    state: msg.payload\n}\n\nconst newList = {\n    ...global.get(\"globalDeviceList\") || {},\n    ...globalDeviceList\n}\n\n\nglobal.set(\"globalDeviceList\", newList);\nreturn {msg, deviceList: newList};",
+        "func": "try {\n    const globalDeviceList = {};\n    globalDeviceList[msg.payload.name.toLowerCase()] = {\n        instanceId: msg.topic,\n        state: msg.payload\n    }\n\n    const newList = {\n        ...global.get(\"globalDeviceList\") || {},\n        ...globalDeviceList\n    }\n\n\n    global.set(\"globalDeviceList\", newList);\n    return { msg, deviceList: newList };\n} catch (err) {\n    node.error(err)\n    return {msg, err}\n}",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
