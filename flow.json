@@ -440,7 +440,7 @@
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "\n\n  <head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <meta http-equiv=\"X-UA-Compatible\" content=\"ie=edge\">\n    <title>HTML 5 Boilerplate</title>\n    <link rel=\"stylesheet\" href=\"style.css\">\n  </head>\n  <body>\n\t<h3>Groups</h3>\n  {{#payload}}\n    <h4>{{name}}</h4>\n    {{#devices}}\n    <div>\n      | <a href=\"http://10.1.0.166:1880/tradfri/{{key}}\">\n      {{#state.isOn}} \n      On\n    {{/state.isOn}} \n    {{^state.isOn}} \n      Off\n    {{/state.isOn}}\n    </a>\n    | {{name}} \n    | {{type}} \n    | {{alive}} \n    |\n    </div>\n    {{/devices}}\n  {{/payload}}\n  </body>\n",
+        "template": "\n\n  <head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <meta http-equiv=\"X-UA-Compatible\" content=\"ie=edge\">\n    <title>Tradfri dashboard</title>\n    <link rel=\"stylesheet\" href=\"https://unpkg.com/@mui/material@5.4.2/umd/material-ui.development.js\">\n  </head>\n  <body>\n\t<h3>Groups</h3>\n  {{#payload}}\n    <h4>{{name}}</h4>\n    {{#devices}}\n    <div>\n      | <a href=\"http://10.1.0.166:1880/tradfri/{{key}}\">\n      {{#state.isOn}} \n      On\n    {{/state.isOn}} \n    {{^state.isOn}} \n      Off\n    {{/state.isOn}}\n    </a>\n    | {{name}} \n    | {{type}} \n    | {{alive}} \n    |\n    </div>\n    {{/devices}}\n  {{/payload}}\n  </body>\n",
         "output": "str",
         "x": 770,
         "y": 660,
