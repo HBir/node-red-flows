@@ -14,6 +14,14 @@
         "name": "tradfri_psk"
     },
     {
+        "id": "b2fb63b9d77e15a7",
+        "type": "tradfri-config",
+        "name": "tradfri config",
+        "gatewayHost": "10.1.0.36",
+        "identity": "tradfri_1644974507343",
+        "preSharedKey": "0pRWR9e1G2aHPWTT"
+    },
+    {
         "id": "50afe6393fb38787",
         "type": "http in",
         "z": "d117d1b62f7d086e",
@@ -55,8 +63,8 @@
         "name": "",
         "statusCode": "200",
         "headers": {},
-        "x": 840,
-        "y": 860,
+        "x": 780,
+        "y": 820,
         "wires": []
     },
     {
@@ -127,7 +135,7 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 890,
+        "x": 790,
         "y": 760,
         "wires": []
     },
@@ -334,5 +342,19 @@
                 "344ecff5bbf8e055"
             ]
         ]
+    },
+    {
+        "id": "f6f142cf241e83ed",
+        "type": "tradfri-light-control",
+        "z": "d117d1b62f7d086e",
+        "gateway": "b2fb63b9d77e15a7",
+        "name": "",
+        "action": "{\"onOff\":true}",
+        "accessories": [],
+        "groups": [],
+        "logInputErrors": true,
+        "x": 170,
+        "y": 520,
+        "wires": []
     }
 ]
