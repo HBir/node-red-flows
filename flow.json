@@ -307,7 +307,9 @@
         "z": "d117d1b62f7d086e",
         "name": "",
         "statusCode": "200",
-        "headers": {},
+        "headers": {
+            "content-type": "application/json"
+        },
         "x": 420,
         "y": 680,
         "wires": []
