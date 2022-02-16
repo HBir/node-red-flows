@@ -349,14 +349,14 @@
         "id": "0475d68bcec2889f",
         "type": "template",
         "z": "d117d1b62f7d086e",
-        "name": "status",
+        "name": "response",
         "field": "payload",
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "{{payload}}",
+        "template": "{{payload.ikea-plugs.payload.name}}",
         "output": "str",
-        "x": 710,
+        "x": 720,
         "y": 580,
         "wires": [
             [
