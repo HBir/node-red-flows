@@ -120,7 +120,7 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
-        "x": 370,
+        "x": 350,
         "y": 860,
         "wires": [
             [
@@ -219,7 +219,7 @@
         "type": "function",
         "z": "d117d1b62f7d086e",
         "name": "FindAndToggle",
-        "func": "function escapeRegExp(string) {\n    return string.replace(/[.*+?^${}()|[\\]\\\\]/g, '\\\\$&'); // $& means the whole matched string\n}\n\nfunction replaceAll(str, find, replace) {\n    return str.replace(new RegExp(escapeRegExp(find), 'g'), replace);\n}\n\nconst trimCommandString = (id) => ((id === 'all')\n    ? '' : replaceAll(id.replace(/the/g, '').trim().toLowerCase(), '_', ' '));\n\nconst toggle = (isOn) => (isOn ? \"off\" : \"on\")\n\n\nconst device = trimCommandString(\n    msg.req.params.device.toLowerCase()\n)\nconst deviceList = global.get(\"globalDeviceList\")\nnode.warn(deviceList);\nconst deviceInfo = deviceList[device];\nnode.warn(deviceInfo);\n\nconst type = deviceInfo.type\n\n\n\nreturn { \n    topic: deviceInfo.instanceId,\n    payload: toggle(deviceInfo[type].isOn)\n};",
+        "func": "function escapeRegExp(string) {\n    return string.replace(/[.*+?^${}()|[\\]\\\\]/g, '\\\\$&'); // $& means the whole matched string\n}\n\nfunction replaceAll(str, find, replace) {\n    return str.replace(new RegExp(escapeRegExp(find), 'g'), replace);\n}\n\nconst trimCommandString = (id) => ((id === 'all')\n    ? '' : replaceAll(id.replace(/the/g, '').trim().toLowerCase(), '_', ' '));\n\nconst toggle = (isOn) => (isOn ? \"off\" : \"on\")\n\nfunction main () {\n    const device = trimCommandString(\n        msg.req.params.device.toLowerCase()\n    )\n    const deviceList = global.get(\"globalDeviceList\")\n    node.warn(deviceList);\n    const deviceInfo = deviceList[device];\n    node.warn(deviceInfo);\n\n    const type = deviceInfo.type\n\n\n\n    return {\n        topic: deviceInfo.instanceId,\n        payload: toggle(deviceInfo[type].isOn),\n    };\n}\n\ntry {\n    return main();\n} catch (err) {\n    node.error(err)\n    return {payload: err}\n}",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -230,7 +230,8 @@
         "wires": [
             [
                 "2e2c00ca72610f7c",
-                "90b5126edab69b36"
+                "90b5126edab69b36",
+                "69cec7f12a58fcb1"
             ]
         ]
     },
@@ -301,13 +302,49 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
-        "x": 390,
+        "x": 330,
         "y": 800,
         "wires": [
             [
                 "039b8253b7696f59"
             ]
         ]
+    },
+    {
+        "id": "bb9e3ac33d04a87a",
+        "type": "inject",
+        "z": "d117d1b62f7d086e",
+        "name": "living room",
+        "props": [
+            {
+                "p": "req.params",
+                "v": "{\"device\": \"living room\"}",
+                "vt": "json"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 360,
+        "y": 740,
+        "wires": [
+            [
+                "039b8253b7696f59"
+            ]
+        ]
+    },
+    {
+        "id": "69cec7f12a58fcb1",
+        "type": "http response",
+        "z": "d117d1b62f7d086e",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 710,
+        "y": 860,
+        "wires": []
     },
     {
         "id": "b1c7433538b40c08",
