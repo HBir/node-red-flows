@@ -342,7 +342,7 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
-        "x": 250,
+        "x": 210,
         "y": 940,
         "wires": [
             [
@@ -357,7 +357,9 @@
         "gateway": "b2fb63b9d77e15a7",
         "name": "",
         "accessories": [],
-        "groups": [],
+        "groups": [
+            "131075"
+        ],
         "logInputErrors": true,
         "x": 410,
         "y": 940,
