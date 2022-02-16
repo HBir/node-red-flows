@@ -328,36 +328,36 @@
         "id": "628fcee036910b55",
         "type": "function",
         "z": "d117d1b62f7d086e",
-        "name": "",
-        "func": "console.log(msg)\nconsole.log(msg.payload.plugList[0].onOff)\n\nreturn {onOff: !msg.payload.plugList[0].onOff};",
+        "name": "toggle",
+        "func": "try {\n    return {onOff: !msg.payload.plugList[0].onOff};\n} catch (err) {\n    node.error(\"Error\", err);\n}",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 600,
+        "x": 570,
         "y": 640,
         "wires": [
             [
-                "4081532cbec28d66"
+                "b1f5f66129fbd2ef"
             ]
         ]
     },
     {
-        "id": "4081532cbec28d66",
-        "type": "debug",
+        "id": "b1f5f66129fbd2ef",
+        "type": "ikea-homesmart",
         "z": "d117d1b62f7d086e",
         "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 750,
+        "deviceId": "65575",
+        "deviceName": "Mirror lamps",
+        "deviceType": "ikea-plugs",
+        "deviceIcon": "font-awesome/fa-plug",
+        "connection": "036fc0a2e35ba47f",
+        "observe": false,
+        "x": 710,
         "y": 640,
-        "wires": []
+        "wires": [
+            []
+        ]
     }
 ]
