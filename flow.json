@@ -288,7 +288,7 @@
         "id": "3bdafeedf173a283",
         "type": "inject",
         "z": "d117d1b62f7d086e",
-        "name": "tall_sofa_lamp",
+        "name": "the_tall_sofa_lamp",
         "props": [
             {
                 "p": "req.params",
@@ -301,7 +301,7 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
-        "x": 370,
+        "x": 390,
         "y": 800,
         "wires": [
             [
