@@ -206,7 +206,7 @@
         "type": "function",
         "z": "d117d1b62f7d086e",
         "name": "toggle",
-        "func": "try {\n    return {payload: {onOff: !msg.payload.plugList[0].onOff}};\n} catch (err) {\n    node.error(\"Error\", err);\n}",
+        "func": "try {\n    return {topic: \"newstate\", payload: {onOff: !msg.payload.plugList[0].onOff}};\n} catch (err) {\n    node.error(\"Error\", err);\n}",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -216,7 +216,8 @@
         "y": 640,
         "wires": [
             [
-                "b1f5f66129fbd2ef"
+                "b1f5f66129fbd2ef",
+                "9f939e5899deaeb0"
             ]
         ]
     },
@@ -231,7 +232,7 @@
         "deviceIcon": "font-awesome/fa-plug",
         "connection": "036fc0a2e35ba47f",
         "observe": false,
-        "x": 710,
+        "x": 730,
         "y": 640,
         "wires": [
             []
@@ -270,13 +271,13 @@
         "joinerType": "str",
         "accumulate": false,
         "timeout": "",
-        "count": "2",
+        "count": "3",
         "reduceRight": false,
         "reduceExp": "",
         "reduceInit": "",
         "reduceInitType": "",
         "reduceFixup": "",
-        "x": 570,
+        "x": 610,
         "y": 580,
         "wires": [
             [
@@ -311,7 +312,7 @@
         "headers": {
             "content-type": "application/json"
         },
-        "x": 860,
+        "x": 960,
         "y": 580,
         "wires": []
     },
@@ -326,7 +327,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 720,
+        "x": 800,
         "y": 580,
         "wires": [
             [
