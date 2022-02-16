@@ -31,7 +31,7 @@
         "scope": null,
         "uncaught": false,
         "x": 200,
-        "y": 660,
+        "y": 780,
         "wires": [
             [
                 "04c6ca6dc91092d7"
@@ -52,7 +52,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 330,
-        "y": 660,
+        "y": 780,
         "wires": []
     },
     {
@@ -62,7 +62,7 @@
         "name": "",
         "scope": null,
         "x": 200,
-        "y": 720,
+        "y": 840,
         "wires": [
             [
                 "42c920e8031cbe7c"
@@ -103,8 +103,8 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
-        "x": 370,
-        "y": 300,
+        "x": 350,
+        "y": 380,
         "wires": [
             [
                 "039b8253b7696f59"
@@ -118,7 +118,7 @@
         "gateway": "b2fb63b9d77e15a7",
         "name": "",
         "x": 570,
-        "y": 660,
+        "y": 780,
         "wires": [
             [
                 "0768e54ac65e1ea0"
@@ -139,7 +139,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 950,
-        "y": 660,
+        "y": 780,
         "wires": []
     },
     {
@@ -154,7 +154,7 @@
         "finalize": "",
         "libs": [],
         "x": 770,
-        "y": 660,
+        "y": 780,
         "wires": [
             [
                 "4725435ee8826d82"
@@ -173,7 +173,7 @@
         "finalize": "",
         "libs": [],
         "x": 760,
-        "y": 720,
+        "y": 840,
         "wires": [
             [
                 "8974dc3c7d79bbde"
@@ -194,7 +194,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 950,
-        "y": 720,
+        "y": 840,
         "wires": []
     },
     {
@@ -247,7 +247,7 @@
         "onceDelay": 0.1,
         "topic": "",
         "x": 570,
-        "y": 720,
+        "y": 840,
         "wires": [
             [
                 "77f2a35b96e8c937"
@@ -285,8 +285,8 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
-        "x": 350,
-        "y": 260,
+        "x": 330,
+        "y": 340,
         "wires": [
             [
                 "039b8253b7696f59"
@@ -310,8 +310,8 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
-        "x": 380,
-        "y": 220,
+        "x": 360,
+        "y": 300,
         "wires": [
             [
                 "039b8253b7696f59"
@@ -335,8 +335,8 @@
         "z": "d117d1b62f7d086e",
         "name": "Debug nodes",
         "info": "",
-        "x": 370,
-        "y": 180,
+        "x": 350,
+        "y": 260,
         "wires": []
     },
     {
@@ -363,7 +363,54 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 330,
-        "y": 720,
+        "y": 840,
+        "wires": []
+    },
+    {
+        "id": "b977ad43a25adb04",
+        "type": "http in",
+        "z": "d117d1b62f7d086e",
+        "name": "/tradfri/dashboard",
+        "url": "/tradfri/dashboard",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 370,
+        "y": 660,
+        "wires": [
+            [
+                "67fd39a02f5fe012"
+            ]
+        ]
+    },
+    {
+        "id": "67fd39a02f5fe012",
+        "type": "function",
+        "z": "d117d1b62f7d086e",
+        "name": "getAllDevices",
+        "func": "function getAllDevices() {\n    const deviceList = global.get(\"globalDeviceList\")\n    return deviceList\n}\n\nreturn {\n    msg,\n    payload: getAllDevices()\n};",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 560,
+        "y": 660,
+        "wires": [
+            [
+                "bbb68f349ccc4640"
+            ]
+        ]
+    },
+    {
+        "id": "bbb68f349ccc4640",
+        "type": "http response",
+        "z": "d117d1b62f7d086e",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 710,
+        "y": 660,
         "wires": []
     },
     {
