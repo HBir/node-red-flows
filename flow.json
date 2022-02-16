@@ -367,10 +367,8 @@
         "z": "d117d1b62f7d086e",
         "gateway": "b2fb63b9d77e15a7",
         "name": "",
-        "action": "{\"onOff\":false}",
-        "accessories": [
-            "65571"
-        ],
+        "action": "{\"onOff\":true}",
+        "accessories": [],
         "groups": [],
         "logInputErrors": true,
         "x": 530,
