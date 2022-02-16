@@ -299,8 +299,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 650,
-        "y": 520,
+        "x": 770,
+        "y": 540,
         "wires": []
     },
     {
@@ -312,7 +312,7 @@
         "headers": {
             "content-type": "application/json"
         },
-        "x": 960,
+        "x": 920,
         "y": 580,
         "wires": []
     },
@@ -327,7 +327,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 800,
+        "x": 780,
         "y": 580,
         "wires": [
             [
