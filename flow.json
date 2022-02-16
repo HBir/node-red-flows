@@ -238,38 +238,6 @@
         ]
     },
     {
-        "id": "dcf2c37b8ae84554",
-        "type": "http response",
-        "z": "d117d1b62f7d086e",
-        "name": "",
-        "statusCode": "200",
-        "headers": {
-            "content-type": "application/json"
-        },
-        "x": 420,
-        "y": 680,
-        "wires": []
-    },
-    {
-        "id": "70266be1dfa1c71b",
-        "type": "template",
-        "z": "d117d1b62f7d086e",
-        "name": "async",
-        "field": "payload",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "plain",
-        "template": "{\"status\": \"success\"}",
-        "output": "str",
-        "x": 290,
-        "y": 680,
-        "wires": [
-            [
-                "dcf2c37b8ae84554"
-            ]
-        ]
-    },
-    {
         "id": "636320b99392df67",
         "type": "function",
         "z": "d117d1b62f7d086e",
