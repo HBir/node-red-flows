@@ -451,6 +451,32 @@
         ]
     },
     {
+        "id": "4311bdc226d30fc5",
+        "type": "uibuilder",
+        "z": "d117d1b62f7d086e",
+        "name": "",
+        "topic": "",
+        "url": "uibuilder",
+        "fwdInMessages": false,
+        "allowScripts": false,
+        "allowStyles": false,
+        "copyIndex": true,
+        "templateFolder": "blank",
+        "extTemplate": "",
+        "showfolder": false,
+        "useSecurity": false,
+        "sessionLength": 432000,
+        "tokenAutoExtend": false,
+        "reload": false,
+        "sourceFolder": "src",
+        "x": 760,
+        "y": 700,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
         "id": "b1c7433538b40c08",
         "type": "http in",
         "z": "1a8368cbbe1982c2",
