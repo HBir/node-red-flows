@@ -179,7 +179,8 @@
         "wires": [
             [
                 "628fcee036910b55",
-                "e9d5191a3867ce91"
+                "e9d5191a3867ce91",
+                "9f939e5899deaeb0"
             ]
         ]
     },
@@ -281,8 +282,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 470,
-        "y": 520,
+        "x": 330,
+        "y": 500,
         "wires": []
     },
     {
@@ -290,7 +291,7 @@
         "type": "function",
         "z": "d117d1b62f7d086e",
         "name": "",
-        "func": "node.send(msg);",
+        "func": "msg.topic = \"http-initial\"\nnode.send(msg);",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -300,7 +301,8 @@
         "y": 580,
         "wires": [
             [
-                "3c27b260862fee26"
+                "3c27b260862fee26",
+                "9f939e5899deaeb0"
             ]
         ]
     },
@@ -317,8 +319,53 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 590,
-        "y": 580,
+        "x": 530,
+        "y": 720,
+        "wires": []
+    },
+    {
+        "id": "9f939e5899deaeb0",
+        "type": "join",
+        "z": "d117d1b62f7d086e",
+        "name": "",
+        "mode": "custom",
+        "build": "object",
+        "property": "",
+        "propertyType": "full",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": false,
+        "timeout": "",
+        "count": "2",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 530,
+        "y": 540,
+        "wires": [
+            [
+                "0195ddb93b151dae"
+            ]
+        ]
+    },
+    {
+        "id": "0195ddb93b151dae",
+        "type": "debug",
+        "z": "d117d1b62f7d086e",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 670,
+        "y": 540,
         "wires": []
     }
 ]
