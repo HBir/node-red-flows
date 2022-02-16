@@ -370,12 +370,12 @@
         "id": "b977ad43a25adb04",
         "type": "http in",
         "z": "d117d1b62f7d086e",
-        "name": "/tradfri/dashboard",
-        "url": "/tradfri/dashboard",
+        "name": "/dashboard",
+        "url": "/dashboard",
         "method": "get",
         "upload": false,
         "swaggerDoc": "",
-        "x": 370,
+        "x": 350,
         "y": 660,
         "wires": [
             [
