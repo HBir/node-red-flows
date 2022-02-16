@@ -375,6 +375,42 @@
         ]
     },
     {
+        "id": "77f2a35b96e8c937",
+        "type": "function",
+        "z": "d117d1b62f7d086e",
+        "name": "",
+        "func": "global.set(\"globalDeviceList\", undefined);\nreturn \"Cleared globalDeviceList\"",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 640,
+        "y": 900,
+        "wires": [
+            [
+                "8974dc3c7d79bbde"
+            ]
+        ]
+    },
+    {
+        "id": "8974dc3c7d79bbde",
+        "type": "debug",
+        "z": "d117d1b62f7d086e",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 790,
+        "y": 900,
+        "wires": []
+    },
+    {
         "id": "b1c7433538b40c08",
         "type": "http in",
         "z": "1a8368cbbe1982c2",
