@@ -20,8 +20,8 @@
         "type": "tradfri-config",
         "name": "tradfri config",
         "gatewayHost": "10.1.0.36",
-        "identity": "tradfri_1644974507343",
-        "preSharedKey": "0pRWR9e1G2aHPWTT"
+        "identity": "tradfri_1645005107424",
+        "preSharedKey": "TTtltDuaoNFmlZHX"
     },
     {
         "id": "50afe6393fb38787",
@@ -33,7 +33,7 @@
         "upload": false,
         "swaggerDoc": "",
         "x": 110,
-        "y": 640,
+        "y": 520,
         "wires": [
             [
                 "e51696fdf2c871ae",
@@ -105,26 +105,6 @@
         "wires": []
     },
     {
-        "id": "ca4355f86d3d201f",
-        "type": "ikea-homesmart",
-        "z": "d117d1b62f7d086e",
-        "name": "",
-        "deviceId": "65575",
-        "deviceName": "",
-        "deviceType": "ikea-plugs",
-        "deviceIcon": "font-awesome/fa-plug",
-        "connection": "",
-        "observe": false,
-        "x": 440,
-        "y": 640,
-        "wires": [
-            [
-                "628fcee036910b55",
-                "9f939e5899deaeb0"
-            ]
-        ]
-    },
-    {
         "id": "e51696fdf2c871ae",
         "type": "template",
         "z": "d117d1b62f7d086e",
@@ -136,11 +116,9 @@
         "template": "status",
         "output": "str",
         "x": 290,
-        "y": 640,
+        "y": 520,
         "wires": [
-            [
-                "ca4355f86d3d201f"
-            ]
+            []
         ]
     },
     {
@@ -155,29 +133,11 @@
         "finalize": "",
         "libs": [],
         "x": 570,
-        "y": 640,
+        "y": 520,
         "wires": [
             [
-                "b1f5f66129fbd2ef",
                 "9f939e5899deaeb0"
             ]
-        ]
-    },
-    {
-        "id": "b1f5f66129fbd2ef",
-        "type": "ikea-homesmart",
-        "z": "d117d1b62f7d086e",
-        "name": "",
-        "deviceId": "65575",
-        "deviceName": "Mirror lamps",
-        "deviceType": "ikea-plugs",
-        "deviceIcon": "font-awesome/fa-plug",
-        "connection": "",
-        "observe": false,
-        "x": 730,
-        "y": 640,
-        "wires": [
-            []
         ]
     },
     {
@@ -192,7 +152,7 @@
         "finalize": "",
         "libs": [],
         "x": 300,
-        "y": 580,
+        "y": 460,
         "wires": [
             [
                 "9f939e5899deaeb0"
@@ -220,7 +180,7 @@
         "reduceInitType": "",
         "reduceFixup": "",
         "x": 610,
-        "y": 580,
+        "y": 460,
         "wires": [
             [
                 "0195ddb93b151dae",
@@ -242,7 +202,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 770,
-        "y": 540,
+        "y": 420,
         "wires": []
     },
     {
@@ -255,7 +215,7 @@
             "content-type": "application/json"
         },
         "x": 920,
-        "y": 580,
+        "y": 460,
         "wires": []
     },
     {
@@ -270,7 +230,7 @@
         "finalize": "",
         "libs": [],
         "x": 780,
-        "y": 580,
+        "y": 460,
         "wires": [
             [
                 "344ecff5bbf8e055"
