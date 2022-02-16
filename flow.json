@@ -16,12 +16,6 @@
         "env": []
     },
     {
-        "id": "036fc0a2e35ba47f",
-        "type": "ikea-connection",
-        "address": "10.1.0.36",
-        "name": "tradfri_psk"
-    },
-    {
         "id": "b2fb63b9d77e15a7",
         "type": "tradfri-config",
         "name": "tradfri config",
@@ -116,12 +110,12 @@
         "z": "d117d1b62f7d086e",
         "name": "",
         "deviceId": "65575",
-        "deviceName": "Mirror lamps",
+        "deviceName": "",
         "deviceType": "ikea-plugs",
         "deviceIcon": "font-awesome/fa-plug",
-        "connection": "036fc0a2e35ba47f",
+        "connection": "",
         "observe": false,
-        "x": 430,
+        "x": 440,
         "y": 640,
         "wires": [
             [
@@ -178,7 +172,7 @@
         "deviceName": "Mirror lamps",
         "deviceType": "ikea-plugs",
         "deviceIcon": "font-awesome/fa-plug",
-        "connection": "036fc0a2e35ba47f",
+        "connection": "",
         "observe": false,
         "x": 730,
         "y": 640,
