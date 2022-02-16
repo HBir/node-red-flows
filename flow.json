@@ -233,71 +233,8 @@
         "x": 710,
         "y": 640,
         "wires": [
-            []
-        ]
-    },
-    {
-        "id": "c5c17947ef06fc62",
-        "type": "http in",
-        "z": "d117d1b62f7d086e",
-        "name": "/test",
-        "url": "/test",
-        "method": "get",
-        "upload": false,
-        "swaggerDoc": "",
-        "x": 130,
-        "y": 480,
-        "wires": [
             [
-                "a9ad5d5ca4633819"
-            ]
-        ]
-    },
-    {
-        "id": "93451870aab0535e",
-        "type": "http response",
-        "z": "d117d1b62f7d086e",
-        "name": "",
-        "statusCode": "200",
-        "headers": {},
-        "x": 440,
-        "y": 480,
-        "wires": []
-    },
-    {
-        "id": "2297cf09119b9f30",
-        "type": "debug",
-        "z": "d117d1b62f7d086e",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 430,
-        "y": 420,
-        "wires": []
-    },
-    {
-        "id": "a9ad5d5ca4633819",
-        "type": "template",
-        "z": "d117d1b62f7d086e",
-        "name": "",
-        "field": "payload",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "plain",
-        "template": "\"test\"",
-        "output": "str",
-        "x": 280,
-        "y": 480,
-        "wires": [
-            [
-                "93451870aab0535e",
-                "2297cf09119b9f30"
+                "3f1f650c724979f5"
             ]
         ]
     },
@@ -332,5 +269,22 @@
                 "dcf2c37b8ae84554"
             ]
         ]
+    },
+    {
+        "id": "3f1f650c724979f5",
+        "type": "debug",
+        "z": "d117d1b62f7d086e",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 850,
+        "y": 640,
+        "wires": []
     }
 ]
