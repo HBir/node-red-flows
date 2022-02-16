@@ -241,13 +241,13 @@
         "id": "94f9e5ca27ce82c1",
         "type": "http in",
         "z": "d117d1b62f7d086e",
-        "name": "/tradfri/:type/:device",
-        "url": "/tradfri/:type/:device",
+        "name": "/tradfri/:device",
+        "url": "/tradfri/:device",
         "method": "get",
         "upload": false,
         "swaggerDoc": "",
-        "x": 130,
-        "y": 780,
+        "x": 80,
+        "y": 700,
         "wires": [
             [
                 "46a4f78f13be1d63",
@@ -265,8 +265,8 @@
         "accessories": [],
         "groups": [],
         "logInputErrors": true,
-        "x": 330,
-        "y": 820,
+        "x": 290,
+        "y": 740,
         "wires": [
             [
                 "4a8ed55ecf72e67e"
@@ -286,8 +286,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 483,
-        "y": 724,
+        "x": 430,
+        "y": 680,
         "wires": []
     },
     {
@@ -297,38 +297,8 @@
         "name": "",
         "statusCode": "200",
         "headers": {},
-        "x": 340,
-        "y": 700,
-        "wires": []
-    },
-    {
-        "id": "ce4562de21eb24bc",
-        "type": "json",
-        "z": "d117d1b62f7d086e",
-        "name": "",
-        "property": "payload",
-        "action": "",
-        "pretty": false,
-        "x": 170,
-        "y": 700,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "883036f9b3a53023",
-        "type": "tradfri-light-control",
-        "z": "d117d1b62f7d086e",
-        "gateway": "b2fb63b9d77e15a7",
-        "name": "",
-        "action": "{\"onOff\":false}",
-        "accessories": [
-            "65550"
-        ],
-        "groups": [],
-        "logInputErrors": true,
-        "x": 790,
-        "y": 940,
+        "x": 300,
+        "y": 620,
         "wires": []
     },
     {
@@ -336,55 +306,23 @@
         "type": "inject",
         "z": "d117d1b62f7d086e",
         "name": "",
-        "props": [],
+        "props": [
+            {
+                "p": "req.params",
+                "v": "{\"device\": \"Bedside table\"}",
+                "vt": "json"
+            }
+        ],
         "repeat": "",
         "crontab": "",
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
-        "x": 210,
-        "y": 940,
+        "x": 310,
+        "y": 980,
         "wires": [
-            [
-                "6837c1021d8ceae8"
-            ]
+            []
         ]
-    },
-    {
-        "id": "6837c1021d8ceae8",
-        "type": "tradfri-state",
-        "z": "d117d1b62f7d086e",
-        "gateway": "b2fb63b9d77e15a7",
-        "name": "",
-        "accessories": [],
-        "groups": [
-            "131075"
-        ],
-        "logInputErrors": true,
-        "x": 410,
-        "y": 940,
-        "wires": [
-            [
-                "e783e351997e940c"
-            ]
-        ]
-    },
-    {
-        "id": "e783e351997e940c",
-        "type": "debug",
-        "z": "d117d1b62f7d086e",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 550,
-        "y": 940,
-        "wires": []
     },
     {
         "id": "6ea96e84ddc1fb55",
@@ -422,7 +360,7 @@
         "type": "function",
         "z": "d117d1b62f7d086e",
         "name": "",
-        "func": "const globalDeviceList = {};\nglobalDeviceList[msg.payload.name] = {\n    instanceId: msg.topic,\n    state: msg.payload\n}\n\nconst newList = {\n    ...global.get(\"globalDeviceList\") || {},\n    ...globalDeviceList\n}\n\n\nglobal.set(\"globalDeviceList\", newList);\nreturn {msg, deviceList: newList};",
+        "func": "const globalDeviceList = {};\nglobalDeviceList[msg.payload.name.toLowerCase()] = {\n    instanceId: msg.topic,\n    state: msg.payload\n}\n\nconst newList = {\n    ...global.get(\"globalDeviceList\") || {},\n    ...globalDeviceList\n}\n\n\nglobal.set(\"globalDeviceList\", newList);\nreturn {msg, deviceList: newList};",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
