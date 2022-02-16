@@ -367,7 +367,7 @@
         "type": "function",
         "z": "d117d1b62f7d086e",
         "name": "",
-        "func": "\nmsg.payload = \"http-initial\"\nnode.send(msg);",
+        "func": "const device = msg.payload[\"ikea-plugs\"]\nmsg.payload = `${device.name} is changed to ${!device.plugList[0].onOff}`\nnode.send(msg);",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
