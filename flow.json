@@ -384,7 +384,7 @@
         "func": "global.set(\"globalDeviceList\", undefined);\nreturn {msg: \"Cleared globalDeviceList\"}",
         "outputs": 1,
         "noerr": 0,
-        "initialize": "// Code added here will be run once\n// whenever the node is started.\nglobal.set(\"globalDeviceList\", undefined);\nreturn { msg: \"Cleared globalDeviceList (on start)\" }",
+        "initialize": "",
         "finalize": "",
         "libs": [],
         "x": 820,
