@@ -28,7 +28,7 @@
             [
                 "e51696fdf2c871ae",
                 "70266be1dfa1c71b",
-                "3c27b260862fee26"
+                "636320b99392df67"
             ]
         ]
     },
@@ -215,9 +215,7 @@
         "x": 570,
         "y": 640,
         "wires": [
-            [
-                "b1f5f66129fbd2ef"
-            ]
+            []
         ]
     },
     {
@@ -234,9 +232,7 @@
         "x": 710,
         "y": 640,
         "wires": [
-            [
-                "3f1f650c724979f5"
-            ]
+            []
         ]
     },
     {
@@ -272,23 +268,6 @@
         ]
     },
     {
-        "id": "3f1f650c724979f5",
-        "type": "debug",
-        "z": "d117d1b62f7d086e",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 850,
-        "y": 640,
-        "wires": []
-    },
-    {
         "id": "3c27b260862fee26",
         "type": "debug",
         "z": "d117d1b62f7d086e",
@@ -301,8 +280,27 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 290,
+        "x": 470,
         "y": 580,
         "wires": []
+    },
+    {
+        "id": "636320b99392df67",
+        "type": "function",
+        "z": "d117d1b62f7d086e",
+        "name": "",
+        "func": "node.send(msg);",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 320,
+        "y": 580,
+        "wires": [
+            [
+                "3c27b260862fee26"
+            ]
+        ]
     }
 ]
