@@ -107,7 +107,7 @@
         "id": "7928829e1332e137",
         "type": "inject",
         "z": "d117d1b62f7d086e",
-        "name": "",
+        "name": "Mirror lamps",
         "props": [
             {
                 "p": "req.params",
@@ -120,7 +120,7 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
-        "x": 350,
+        "x": 370,
         "y": 860,
         "wires": [
             [
@@ -218,14 +218,14 @@
         "id": "039b8253b7696f59",
         "type": "function",
         "z": "d117d1b62f7d086e",
-        "name": "",
-        "func": "const device = msg.req.params.device.toLowerCase()\nconst deviceList = global.get(\"globalDeviceList\")\nnode.warn(deviceList);\nconst deviceInfo = deviceList[device];\nnode.warn(deviceInfo);\n\nconst type = deviceInfo.type\n\nconst toggle = (isOn) => ( isOn ? \"off\" : \"on\")\n\n\nreturn { \n    topic: deviceInfo.instanceId,\n    payload: toggle(deviceInfo[type].isOn)\n};",
+        "name": "FindAndToggle",
+        "func": "function escapeRegExp(string) {\n    return string.replace(/[.*+?^${}()|[\\]\\\\]/g, '\\\\$&'); // $& means the whole matched string\n}\n\nfunction replaceAll(str, find, replace) {\n    return str.replace(new RegExp(escapeRegExp(find), 'g'), replace);\n}\n\nconst trimCommandString = (id) => ((id === 'all')\n    ? '' : replaceAll(id.replace(/the/g, '').trim().toLowerCase(), '_', ' '));\n\nconst toggle = (isOn) => (isOn ? \"off\" : \"on\")\n\n\nconst device = trimCommandString(\n    msg.req.params.device.toLowerCase()\n)\nconst deviceList = global.get(\"globalDeviceList\")\nnode.warn(deviceList);\nconst deviceInfo = deviceList[device];\nnode.warn(deviceInfo);\n\nconst type = deviceInfo.type\n\n\n\nreturn { \n    topic: deviceInfo.instanceId,\n    payload: toggle(deviceInfo[type].isOn)\n};",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 520,
+        "x": 540,
         "y": 920,
         "wires": [
             [
@@ -247,7 +247,7 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 670,
+        "x": 710,
         "y": 980,
         "wires": []
     },
@@ -283,6 +283,31 @@
         "x": 760,
         "y": 920,
         "wires": []
+    },
+    {
+        "id": "3bdafeedf173a283",
+        "type": "inject",
+        "z": "d117d1b62f7d086e",
+        "name": "tall_sofa_lamp",
+        "props": [
+            {
+                "p": "req.params",
+                "v": "{\"device\": \"tall sofa lamp\"}",
+                "vt": "json"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 370,
+        "y": 800,
+        "wires": [
+            [
+                "039b8253b7696f59"
+            ]
+        ]
     },
     {
         "id": "b1c7433538b40c08",
