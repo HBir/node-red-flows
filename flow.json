@@ -26,7 +26,8 @@
         "y": 640,
         "wires": [
             [
-                "e51696fdf2c871ae"
+                "e51696fdf2c871ae",
+                "70266be1dfa1c71b"
             ]
         ]
     },
@@ -195,8 +196,7 @@
         "y": 640,
         "wires": [
             [
-                "ca4355f86d3d201f",
-                "dcf2c37b8ae84554"
+                "ca4355f86d3d201f"
             ]
         ]
     },
@@ -308,8 +308,27 @@
         "name": "",
         "statusCode": "200",
         "headers": {},
-        "x": 440,
-        "y": 700,
+        "x": 420,
+        "y": 680,
         "wires": []
+    },
+    {
+        "id": "70266be1dfa1c71b",
+        "type": "template",
+        "z": "d117d1b62f7d086e",
+        "name": "async",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "plain",
+        "template": "{\"status\": \"success\"}",
+        "output": "str",
+        "x": 290,
+        "y": 680,
+        "wires": [
+            [
+                "dcf2c37b8ae84554"
+            ]
+        ]
     }
 ]
