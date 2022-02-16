@@ -399,8 +399,7 @@
         "wires": [
             [
                 "e4fa75504074f24d",
-                "fdc62ee56dd0312e",
-                "bbb68f349ccc4640"
+                "fdc62ee56dd0312e"
             ]
         ]
     },
@@ -412,7 +411,7 @@
         "statusCode": "",
         "headers": {},
         "x": 930,
-        "y": 680,
+        "y": 660,
         "wires": []
     },
     {
@@ -428,7 +427,7 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 710,
+        "x": 750,
         "y": 620,
         "wires": []
     },
@@ -441,12 +440,14 @@
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "This is the payload: {{payload}} !",
+        "template": "{{#payload.group}}\n  <b>{{name}}</b>\n{{/payload.group}}",
         "output": "str",
         "x": 770,
         "y": 660,
         "wires": [
-            []
+            [
+                "bbb68f349ccc4640"
+            ]
         ]
     },
     {
