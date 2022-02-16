@@ -30,8 +30,8 @@
         "name": "",
         "scope": null,
         "uncaught": false,
-        "x": 60,
-        "y": 1140,
+        "x": 180,
+        "y": 1080,
         "wires": [
             [
                 "04c6ca6dc91092d7"
@@ -51,8 +51,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 190,
-        "y": 1140,
+        "x": 310,
+        "y": 1080,
         "wires": []
     },
     {
@@ -61,8 +61,8 @@
         "z": "d117d1b62f7d086e",
         "name": "",
         "scope": null,
-        "x": 60,
-        "y": 1180,
+        "x": 180,
+        "y": 1140,
         "wires": [
             [
                 "42c920e8031cbe7c"
@@ -117,8 +117,8 @@
         "z": "d117d1b62f7d086e",
         "gateway": "b2fb63b9d77e15a7",
         "name": "",
-        "x": 430,
-        "y": 1140,
+        "x": 550,
+        "y": 1080,
         "wires": [
             [
                 "0768e54ac65e1ea0"
@@ -138,8 +138,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 810,
-        "y": 1140,
+        "x": 930,
+        "y": 1080,
         "wires": []
     },
     {
@@ -153,8 +153,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 630,
-        "y": 1140,
+        "x": 750,
+        "y": 1080,
         "wires": [
             [
                 "4725435ee8826d82"
@@ -172,8 +172,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 620,
-        "y": 1180,
+        "x": 740,
+        "y": 1140,
         "wires": [
             [
                 "8974dc3c7d79bbde"
@@ -193,16 +193,16 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 810,
-        "y": 1180,
+        "x": 930,
+        "y": 1140,
         "wires": []
     },
     {
         "id": "039b8253b7696f59",
         "type": "function",
         "z": "d117d1b62f7d086e",
-        "name": "FindAndToggle",
-        "func": "function escapeRegExp(string) {\n    return string.replace(/[.*+?^${}()|[\\]\\\\]/g, '\\\\$&'); // $& means the whole matched string\n}\n\nfunction replaceAll(str, find, replace) {\n    return str.replace(new RegExp(escapeRegExp(find), 'g'), replace);\n}\n\nconst trimCommandString = (id) => ((id === 'all')\n    ? '' : replaceAll(id.replace(/the/g, '').trim().toLowerCase(), '_', ' '));\n\nconst toggle = (isOn) => (isOn ? \"off\" : \"on\")\n\nconst getIsOn = (deviceInfo, type) => ((type === 'group') ? deviceInfo.isOn : deviceInfo[type].isOn)\n\nfunction main () {\n    const device = trimCommandString(\n        msg.req.params.device.toLowerCase()\n    )\n    const deviceList = global.get(\"globalDeviceList\")\n    node.warn(deviceList);\n    const deviceInfo = deviceList[device];\n    node.warn(deviceInfo);\n\n    const type = deviceInfo.type\n\n    const isOn = getIsOn(deviceInfo, type)\n\n    return {\n        topic: deviceInfo.instanceId,\n        payload: toggle(isOn),\n        res: msg.res\n    };\n}\n\ntry {\n    return main();\n} catch (err) {\n    node.error(err)\n    return {\n        payload: err.message,\n        res: msg.res,\n        statusCode: 500\n    }\n}",
+        "name": "findAndToggle",
+        "func": "function escapeRegExp(string) {\n    return string.replace(/[.*+?^${}()|[\\]\\\\]/g, '\\\\$&'); // $& means the whole matched string\n}\n\nfunction replaceAll(str, find, replace) {\n    return str.replace(new RegExp(escapeRegExp(find), 'g'), replace);\n}\n\nconst trimCommandString = (id) => ((id === 'all')\n    ? '' : replaceAll(id.replace(/the/g, '').trim().toLowerCase(), '_', ' '));\n\nconst toggle = (isOn) => (isOn ? \"off\" : \"on\")\n\nconst getIsOn = (deviceInfo, type) => ((type === 'group') ? deviceInfo.isOn : deviceInfo[type].isOn)\n\nfunction findAndToggle (input) {\n    const device = trimCommandString(\n        input.req.params.device.toLowerCase()\n    )\n    const deviceList = global.get(\"globalDeviceList\")\n    const deviceInfo = deviceList[device];\n    // node.warn(deviceList);\n    // node.warn(deviceInfo);\n\n    const type = deviceInfo.type\n    const isOn = getIsOn(deviceInfo, type)\n\n    return {\n        topic: deviceInfo.instanceId,\n        payload: toggle(isOn),\n        res: input.res\n    };\n}\n\ntry {\n    return findAndToggle(msg);\n} catch (err) {\n    node.error(err)\n    return {\n        payload: err.message,\n        res: msg.res,\n        statusCode: 500\n    }\n}",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -246,8 +246,8 @@
         "once": true,
         "onceDelay": 0.1,
         "topic": "",
-        "x": 430,
-        "y": 1180,
+        "x": 550,
+        "y": 1140,
         "wires": [
             [
                 "77f2a35b96e8c937"
@@ -259,12 +259,12 @@
         "type": "tradfri-switch-control",
         "z": "d117d1b62f7d086e",
         "gateway": "b2fb63b9d77e15a7",
-        "name": "",
+        "name": "Update tradfri",
         "action": "",
         "accessories": [],
         "groups": [],
         "logInputErrors": true,
-        "x": 760,
+        "x": 740,
         "y": 920,
         "wires": []
     },
@@ -345,8 +345,8 @@
         "z": "d117d1b62f7d086e",
         "name": "TODO:",
         "info": "Groups onOff status are not updated \nwhen induvidual devices have their status\nchanged.\n\nHack fix for this is to that each time the\nstate of a device is changed, update \nthe global variable state of the device's\ngroup.",
-        "x": 570,
-        "y": 780,
+        "x": 550,
+        "y": 840,
         "wires": []
     },
     {
@@ -362,8 +362,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 190,
-        "y": 1180,
+        "x": 310,
+        "y": 1140,
         "wires": []
     },
     {
