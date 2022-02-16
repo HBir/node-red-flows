@@ -388,7 +388,7 @@
         "type": "function",
         "z": "d117d1b62f7d086e",
         "name": "getAllDevices",
-        "func": "function getAllDevices() {\n    const deviceList = global.get(\"globalDeviceList\")\n    return deviceList\n}\n\nreturn {\n    msg,\n    payload: getAllDevices()\n};",
+        "func": "function getAllDevices() {\n    const deviceList = global.get(\"globalDeviceList\")\n    return deviceList\n}\n\nreturn {\n    payload: getAllDevices(),\n    res: msg.res\n};",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
