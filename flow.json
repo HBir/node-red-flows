@@ -353,12 +353,12 @@
         "deviceType": "ikea-plugs",
         "deviceIcon": "font-awesome/fa-plug",
         "connection": "036fc0a2e35ba47f",
-        "observe": true,
+        "observe": false,
         "x": 710,
         "y": 640,
         "wires": [
             [
-                "0d06dfec3a1a250a"
+                "d9596dbb30a60217"
             ]
         ]
     },
@@ -369,8 +369,27 @@
         "name": "",
         "statusCode": "",
         "headers": {},
-        "x": 850,
+        "x": 990,
         "y": 640,
         "wires": []
+    },
+    {
+        "id": "d9596dbb30a60217",
+        "type": "template",
+        "z": "d117d1b62f7d086e",
+        "name": "status",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "json",
+        "syntax": "plain",
+        "template": "{payload: \"success\"}",
+        "output": "json",
+        "x": 870,
+        "y": 640,
+        "wires": [
+            [
+                "0d06dfec3a1a250a"
+            ]
+        ]
     }
 ]
