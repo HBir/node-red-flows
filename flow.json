@@ -236,17 +236,6 @@
         ]
     },
     {
-        "id": "0d06dfec3a1a250a",
-        "type": "http response",
-        "z": "d117d1b62f7d086e",
-        "name": "",
-        "statusCode": "200",
-        "headers": {},
-        "x": 900,
-        "y": 660,
-        "wires": []
-    },
-    {
         "id": "f24cb512ce9d380d",
         "type": "debug",
         "z": "d117d1b62f7d086e",
@@ -344,8 +333,19 @@
         "wires": [
             [
                 "f24cb512ce9d380d",
-                "0d06dfec3a1a250a"
+                "dcf2c37b8ae84554"
             ]
         ]
+    },
+    {
+        "id": "dcf2c37b8ae84554",
+        "type": "http response",
+        "z": "d117d1b62f7d086e",
+        "name": "",
+        "statusCode": "200",
+        "headers": {},
+        "x": 900,
+        "y": 660,
+        "wires": []
     }
 ]
