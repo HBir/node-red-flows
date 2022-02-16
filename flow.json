@@ -282,5 +282,33 @@
         "x": 890,
         "y": 620,
         "wires": []
+    },
+    {
+        "id": "c5c17947ef06fc62",
+        "type": "http in",
+        "z": "d117d1b62f7d086e",
+        "name": "/test",
+        "url": "/test",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 130,
+        "y": 480,
+        "wires": [
+            [
+                "93451870aab0535e"
+            ]
+        ]
+    },
+    {
+        "id": "93451870aab0535e",
+        "type": "http response",
+        "z": "d117d1b62f7d086e",
+        "name": "",
+        "statusCode": "200",
+        "headers": {},
+        "x": 280,
+        "y": 480,
+        "wires": []
     }
 ]
