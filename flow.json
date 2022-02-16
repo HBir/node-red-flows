@@ -329,7 +329,7 @@
         "type": "function",
         "z": "d117d1b62f7d086e",
         "name": "toggle",
-        "func": "try {\n    return {onOff: !msg.payload.plugList[0].onOff};\n} catch (err) {\n    node.error(\"Error\", err);\n}",
+        "func": "try {\n    return {payload: {onOff: !msg.payload.plugList[0].onOff}};\n} catch (err) {\n    node.error(\"Error\", err);\n}",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
