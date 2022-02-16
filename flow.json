@@ -176,8 +176,7 @@
         "y": 640,
         "wires": [
             [
-                "628fcee036910b55",
-                "ad46115c4871ecbc"
+                "628fcee036910b55"
             ]
         ]
     },
@@ -216,7 +215,7 @@
         "y": 640,
         "wires": [
             [
-                "5b2cbb7f4c78d59d"
+                "b1f5f66129fbd2ef"
             ]
         ]
     },
@@ -231,28 +230,11 @@
         "deviceIcon": "font-awesome/fa-plug",
         "connection": "036fc0a2e35ba47f",
         "observe": false,
-        "x": 630,
-        "y": 540,
+        "x": 710,
+        "y": 640,
         "wires": [
             []
         ]
-    },
-    {
-        "id": "f24cb512ce9d380d",
-        "type": "debug",
-        "z": "d117d1b62f7d086e",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 890,
-        "y": 620,
-        "wires": []
     },
     {
         "id": "c5c17947ef06fc62",
@@ -320,25 +302,6 @@
         ]
     },
     {
-        "id": "5b2cbb7f4c78d59d",
-        "type": "template",
-        "z": "d117d1b62f7d086e",
-        "name": "",
-        "field": "payload",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "plain",
-        "template": "test",
-        "output": "str",
-        "x": 740,
-        "y": 640,
-        "wires": [
-            [
-                "f24cb512ce9d380d"
-            ]
-        ]
-    },
-    {
         "id": "dcf2c37b8ae84554",
         "type": "http response",
         "z": "d117d1b62f7d086e",
@@ -347,23 +310,6 @@
         "headers": {},
         "x": 440,
         "y": 700,
-        "wires": []
-    },
-    {
-        "id": "ad46115c4871ecbc",
-        "type": "debug",
-        "z": "d117d1b62f7d086e",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 570,
-        "y": 580,
         "wires": []
     }
 ]
