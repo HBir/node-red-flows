@@ -27,7 +27,6 @@
         "wires": [
             [
                 "e51696fdf2c871ae",
-                "70266be1dfa1c71b",
                 "636320b99392df67"
             ]
         ]
@@ -179,7 +178,6 @@
         "wires": [
             [
                 "628fcee036910b55",
-                "e9d5191a3867ce91",
                 "9f939e5899deaeb0"
             ]
         ]
@@ -270,23 +268,6 @@
         ]
     },
     {
-        "id": "3c27b260862fee26",
-        "type": "debug",
-        "z": "d117d1b62f7d086e",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 330,
-        "y": 500,
-        "wires": []
-    },
-    {
         "id": "636320b99392df67",
         "type": "function",
         "z": "d117d1b62f7d086e",
@@ -297,31 +278,13 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 320,
+        "x": 300,
         "y": 580,
         "wires": [
             [
-                "3c27b260862fee26",
                 "9f939e5899deaeb0"
             ]
         ]
-    },
-    {
-        "id": "e9d5191a3867ce91",
-        "type": "debug",
-        "z": "d117d1b62f7d086e",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 530,
-        "y": 720,
-        "wires": []
     },
     {
         "id": "9f939e5899deaeb0",
@@ -343,11 +306,12 @@
         "reduceInit": "",
         "reduceInitType": "",
         "reduceFixup": "",
-        "x": 530,
-        "y": 540,
+        "x": 570,
+        "y": 580,
         "wires": [
             [
-                "0195ddb93b151dae"
+                "0195ddb93b151dae",
+                "0475d68bcec2889f"
             ]
         ]
     },
@@ -367,5 +331,37 @@
         "x": 670,
         "y": 540,
         "wires": []
+    },
+    {
+        "id": "344ecff5bbf8e055",
+        "type": "http response",
+        "z": "d117d1b62f7d086e",
+        "name": "",
+        "statusCode": "200",
+        "headers": {
+            "content-type": "application/json"
+        },
+        "x": 840,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "0475d68bcec2889f",
+        "type": "template",
+        "z": "d117d1b62f7d086e",
+        "name": "status",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "${payload}",
+        "output": "str",
+        "x": 710,
+        "y": 580,
+        "wires": [
+            [
+                "344ecff5bbf8e055"
+            ]
+        ]
     }
 ]
