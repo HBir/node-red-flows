@@ -344,7 +344,7 @@
         "type": "comment",
         "z": "d117d1b62f7d086e",
         "name": "TODO:",
-        "info": "Groups onOff status are not updated \nwhen induvidual devices have their status\nchanged.\n\nHack fix for this is to that each time the\nstate of a device is changed, update \nthe global variable state of the device's\ngroup.",
+        "info": "Groups onOff status are not updated \nwhen induvidual devices have their status\nchanged.\n\nHack fix for this is to that each time the\nstate of a device is changed, update \nthe global variable state of the device's\ngroup.\n",
         "x": 550,
         "y": 840,
         "wires": []
