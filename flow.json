@@ -219,7 +219,7 @@
         "type": "function",
         "z": "d117d1b62f7d086e",
         "name": "FindAndToggle",
-        "func": "function escapeRegExp(string) {\n    return string.replace(/[.*+?^${}()|[\\]\\\\]/g, '\\\\$&'); // $& means the whole matched string\n}\n\nfunction replaceAll(str, find, replace) {\n    return str.replace(new RegExp(escapeRegExp(find), 'g'), replace);\n}\n\nconst trimCommandString = (id) => ((id === 'all')\n    ? '' : replaceAll(id.replace(/the/g, '').trim().toLowerCase(), '_', ' '));\n\nconst toggle = (isOn) => (isOn ? \"off\" : \"on\")\n\nfunction main () {\n    const device = trimCommandString(\n        msg.req.params.device.toLowerCase()\n    )\n    const deviceList = global.get(\"globalDeviceList\")\n    node.warn(deviceList);\n    const deviceInfo = deviceList[device];\n    node.warn(deviceInfo);\n\n    const type = deviceInfo.type\n\n\n\n    return {\n        topic: deviceInfo.instanceId,\n        payload: toggle(deviceInfo[type].isOn),\n    };\n}\n\ntry {\n    return main();\n} catch (err) {\n    node.error(err)\n    return {payload: err}\n}",
+        "func": "function escapeRegExp(string) {\n    return string.replace(/[.*+?^${}()|[\\]\\\\]/g, '\\\\$&'); // $& means the whole matched string\n}\n\nfunction replaceAll(str, find, replace) {\n    return str.replace(new RegExp(escapeRegExp(find), 'g'), replace);\n}\n\nconst trimCommandString = (id) => ((id === 'all')\n    ? '' : replaceAll(id.replace(/the/g, '').trim().toLowerCase(), '_', ' '));\n\nconst toggle = (isOn) => (isOn ? \"off\" : \"on\")\n\nfunction main () {\n    const device = trimCommandString(\n        msg.req.params.device.toLowerCase()\n    )\n    const deviceList = global.get(\"globalDeviceList\")\n    node.warn(deviceList);\n    const deviceInfo = deviceList[device];\n    node.warn(deviceInfo);\n\n    const type = deviceInfo.type\n\n\n\n    return {\n        topic: deviceInfo.instanceId,\n        payload: toggle(deviceInfo[type].isOn),\n        res: msg.res\n    };\n}\n\ntry {\n    return main();\n} catch (err) {\n    node.error(err)\n    return {\n        payload: err,\n        res: msg.res\n    }\n}",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -230,7 +230,8 @@
         "wires": [
             [
                 "2e2c00ca72610f7c",
-                "90b5126edab69b36"
+                "90b5126edab69b36",
+                "69cec7f12a58fcb1"
             ]
         ]
     },
