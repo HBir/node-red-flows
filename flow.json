@@ -255,7 +255,7 @@
         "y": 640,
         "wires": [
             [
-                "5a337023adc74564"
+                "628fcee036910b55"
             ]
         ]
     },
@@ -296,34 +296,6 @@
         ]
     },
     {
-        "id": "5a337023adc74564",
-        "type": "debug",
-        "z": "d117d1b62f7d086e",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 590,
-        "y": 660,
-        "wires": []
-    },
-    {
-        "id": "4b08f95d0f230ade",
-        "type": "http response",
-        "z": "d117d1b62f7d086e",
-        "name": "",
-        "statusCode": "200",
-        "headers": {},
-        "x": 600,
-        "y": 620,
-        "wires": []
-    },
-    {
         "id": "6c796f082a771a59",
         "type": "inject",
         "z": "d117d1b62f7d086e",
@@ -351,5 +323,41 @@
                 "e51696fdf2c871ae"
             ]
         ]
+    },
+    {
+        "id": "628fcee036910b55",
+        "type": "function",
+        "z": "d117d1b62f7d086e",
+        "name": "",
+        "func": "console.log(msg)\nconsole.log(msg.payload.plugList[0].onOff)\n\nreturn {onOff: !msg.payload.plugList[0].onOff};",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 600,
+        "y": 640,
+        "wires": [
+            [
+                "4081532cbec28d66"
+            ]
+        ]
+    },
+    {
+        "id": "4081532cbec28d66",
+        "type": "debug",
+        "z": "d117d1b62f7d086e",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 750,
+        "y": 640,
+        "wires": []
     }
 ]
