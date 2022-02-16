@@ -255,7 +255,7 @@
         "fieldType": "msg",
         "format": "json",
         "syntax": "plain",
-        "template": "\"test\"",
+        "template": "test",
         "output": "str",
         "x": 730,
         "y": 640,
@@ -338,7 +338,7 @@
         "format": "handlebars",
         "syntax": "plain",
         "template": "\"test\"",
-        "output": "json",
+        "output": "str",
         "x": 280,
         "y": 480,
         "wires": [
