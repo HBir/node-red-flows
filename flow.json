@@ -388,7 +388,7 @@
         "type": "function",
         "z": "d117d1b62f7d086e",
         "name": "getAllDevices",
-        "func": "function getAllDevices() {\n    const devices = global.get(\"globalDeviceList\")\n    node.warn(devices)\n    const formattedDevices = Object.keys(devices).reduce((prev, key) => ({\n            [key]: {\n                name: devices[key].name,\n                type: devices[key].type,\n                instanceId: devices[key].instanceId,\n                alive: devices[key].alive,\n                state: devices[key][devices[key].type] || {isOn: devices[key].isOn},\n                deviceIds: devices[key].deviceIds\n            },\n            ...prev,\n        }), {});\n    const categorizedDevices = Object.keys(formattedDevices).reduce((prev, key) => ({\n        ...prev,\n        [formattedDevices[key].type]: {\n            ...prev[formattedDevices[key].type],\n            [key]: formattedDevices[key]\n        },\n    }),{});\n    return categorizedDevices\n}\n\nreturn {\n    payload: getAllDevices(),\n    res: msg.res\n};",
+        "func": "function getAllDevices() {\n    const devices = global.get(\"globalDeviceList\")\n    node.warn(devices)\n    const formattedDevices = Object.keys(devices).reduce((prev, key) => ([\n            {\n                key,\n                name: devices[key].name,\n                type: devices[key].type,\n                instanceId: devices[key].instanceId,\n                alive: devices[key].alive,\n                state: devices[key][devices[key].type] || {isOn: devices[key].isOn},\n                deviceIds: devices[key].deviceIds\n            },\n            ...prev,\n        ]), []);\n        /*\n    const categorizedDevices = Object.keys(formattedDevices).reduce((prev, key) => ([\n        ...prev,\n        [formattedDevices[key].type]: {\n            ...prev[formattedDevices[key].type],\n            [key]: formattedDevices[key]\n        },\n    }),[]);*/\n    return formattedDevices\n}\n\nreturn {\n    payload: getAllDevices(),\n    res: msg.res\n};",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -399,7 +399,8 @@
         "wires": [
             [
                 "e4fa75504074f24d",
-                "fdc62ee56dd0312e"
+                "fdc62ee56dd0312e",
+                "bbb68f349ccc4640"
             ]
         ]
     },
@@ -411,7 +412,7 @@
         "statusCode": "",
         "headers": {},
         "x": 930,
-        "y": 660,
+        "y": 680,
         "wires": []
     },
     {
@@ -445,9 +446,7 @@
         "x": 770,
         "y": 660,
         "wires": [
-            [
-                "bbb68f349ccc4640"
-            ]
+            []
         ]
     },
     {
