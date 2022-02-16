@@ -321,7 +321,7 @@
         "type": "function",
         "z": "d117d1b62f7d086e",
         "name": "",
-        "func": "const device = msg.payload[\"ikea-plugs\"]\nmsg.payload = { name: device.name, newStatus: !device.plugList[0].onOff}\nnode.send(msg);",
+        "func": "const device = msg.payload[\"ikea-plugs\"]\nmsg.payload = { name: device.name, newStatus: msg.payload.newstate}\nnode.send(msg);",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
