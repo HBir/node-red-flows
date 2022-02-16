@@ -362,7 +362,7 @@
         "type": "function",
         "z": "d117d1b62f7d086e",
         "name": "",
-        "func": "try {\n    const globalDeviceList = {};\n    globalDeviceList[msg.payload.name.toLowerCase()] = {\n        instanceId: msg.topic,\n        state: msg.payload\n    }\n\n    const newList = {\n        ...global.get(\"globalDeviceList\") || {},\n        ...globalDeviceList\n    }\n\n\n    global.set(\"globalDeviceList\", newList);\n    return { msg, deviceList: newList };\n} catch (err) {\n    node.error(err)\n    return {msg, err}\n}",
+        "func": "try {\n    const globalDeviceList = {};\n    const name = msg.payload.name.toLowerCase()\n    globalDeviceList[name] = msg.payload\n\n    const newList = {\n        ...global.get(\"globalDeviceList\") || {},\n        ...globalDeviceList\n    }\n\n\n    global.set(\"globalDeviceList\", newList);\n    return { msg, deviceList: newList };\n} catch (err) {\n    node.error(err)\n    return {msg, err}\n}",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -417,7 +417,7 @@
         "type": "function",
         "z": "d117d1b62f7d086e",
         "name": "",
-        "func": "const device = msg.req.params.device.toLowerCase()\nconst deviceList = global.get(\"globalDeviceList\")\nnode.warn(deviceList);\nconst deviceInfo = deviceList[device];\nnode.warn(deviceInfo);\n\nreturn {msg: {deviceInfo}};",
+        "func": "const device = msg.req.params.device.toLowerCase()\nconst deviceList = global.get(\"globalDeviceList\")\nnode.warn(deviceList);\nconst deviceInfo = deviceList[device];\nnode.warn(deviceInfo);\n\nconst type = deviceInfo.state.type\n\nreturn { \n    topic: deviceInfo.instanceId\n\n};",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -427,7 +427,8 @@
         "y": 980,
         "wires": [
             [
-                "2e2c00ca72610f7c"
+                "2e2c00ca72610f7c",
+                "90b5126edab69b36"
             ]
         ]
     },
@@ -445,7 +446,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 610,
-        "y": 980,
+        "y": 1040,
         "wires": []
     },
     {
@@ -466,6 +467,20 @@
                 "77f2a35b96e8c937"
             ]
         ]
+    },
+    {
+        "id": "90b5126edab69b36",
+        "type": "tradfri-switch-control",
+        "z": "d117d1b62f7d086e",
+        "gateway": "b2fb63b9d77e15a7",
+        "name": "",
+        "action": "",
+        "accessories": [],
+        "groups": [],
+        "logInputErrors": true,
+        "x": 820,
+        "y": 980,
+        "wires": []
     },
     {
         "id": "b1c7433538b40c08",
