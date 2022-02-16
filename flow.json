@@ -398,7 +398,8 @@
         "y": 660,
         "wires": [
             [
-                "bbb68f349ccc4640"
+                "e4fa75504074f24d",
+                "fdc62ee56dd0312e"
             ]
         ]
     },
@@ -409,9 +410,45 @@
         "name": "",
         "statusCode": "",
         "headers": {},
-        "x": 710,
+        "x": 930,
         "y": 660,
         "wires": []
+    },
+    {
+        "id": "e4fa75504074f24d",
+        "type": "debug",
+        "z": "d117d1b62f7d086e",
+        "name": "log",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 710,
+        "y": 620,
+        "wires": []
+    },
+    {
+        "id": "fdc62ee56dd0312e",
+        "type": "template",
+        "z": "d117d1b62f7d086e",
+        "name": "dashboard",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "This is the payload: {{payload}} !",
+        "output": "str",
+        "x": 770,
+        "y": 660,
+        "wires": [
+            [
+                "bbb68f349ccc4640"
+            ]
+        ]
     },
     {
         "id": "b1c7433538b40c08",
