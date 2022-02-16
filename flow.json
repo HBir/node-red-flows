@@ -311,7 +311,7 @@
         "wires": [
             [
                 "0195ddb93b151dae",
-                "0475d68bcec2889f"
+                "84d209f2ad655824"
             ]
         ]
     },
@@ -341,28 +341,9 @@
         "headers": {
             "content-type": "application/json"
         },
-        "x": 840,
+        "x": 860,
         "y": 580,
         "wires": []
-    },
-    {
-        "id": "0475d68bcec2889f",
-        "type": "template",
-        "z": "d117d1b62f7d086e",
-        "name": "response",
-        "field": "payload",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "{{payload.ikea-plugs.payload.name}}",
-        "output": "str",
-        "x": 720,
-        "y": 580,
-        "wires": [
-            [
-                "344ecff5bbf8e055"
-            ]
-        ]
     },
     {
         "id": "ef70eb1dd1fe023b",
@@ -379,6 +360,25 @@
         "y": 380,
         "wires": [
             []
+        ]
+    },
+    {
+        "id": "84d209f2ad655824",
+        "type": "function",
+        "z": "d117d1b62f7d086e",
+        "name": "",
+        "func": "\nreturn payload[\"ikea-plugs\"].name;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 720,
+        "y": 580,
+        "wires": [
+            [
+                "344ecff5bbf8e055"
+            ]
         ]
     }
 ]
