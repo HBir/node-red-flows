@@ -309,7 +309,7 @@
         "props": [
             {
                 "p": "req.params",
-                "v": "{\"device\": \"Bedside table\"}",
+                "v": "{\"device\": \"Mirror lamps\"}",
                 "vt": "json"
             }
         ],
