@@ -321,8 +321,10 @@
         "z": "d117d1b62f7d086e",
         "gateway": "b2fb63b9d77e15a7",
         "name": "",
-        "action": "{\"onOff\":true}",
-        "accessories": [],
+        "action": "{\"onOff\":false}",
+        "accessories": [
+            "65550"
+        ],
         "groups": [],
         "logInputErrors": true,
         "x": 530,
@@ -334,23 +336,13 @@
         "type": "inject",
         "z": "d117d1b62f7d086e",
         "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
+        "props": [],
         "repeat": "",
         "crontab": "",
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 340,
+        "x": 330,
         "y": 940,
         "wires": [
             [
