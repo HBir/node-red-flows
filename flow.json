@@ -8,6 +8,14 @@
         "env": []
     },
     {
+        "id": "1a8368cbbe1982c2",
+        "type": "tab",
+        "label": "Pi status",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
         "id": "036fc0a2e35ba47f",
         "type": "ikea-connection",
         "address": "10.1.0.36",
@@ -40,34 +48,6 @@
         ]
     },
     {
-        "id": "e0be295598db064b",
-        "type": "http in",
-        "z": "d117d1b62f7d086e",
-        "name": "/pistatus",
-        "url": "/pistatus",
-        "method": "get",
-        "upload": false,
-        "swaggerDoc": "",
-        "x": 260,
-        "y": 800,
-        "wires": [
-            [
-                "ef4e1f187973c37e"
-            ]
-        ]
-    },
-    {
-        "id": "2988cc719fb018ac",
-        "type": "http response",
-        "z": "d117d1b62f7d086e",
-        "name": "",
-        "statusCode": "200",
-        "headers": {},
-        "x": 780,
-        "y": 820,
-        "wires": []
-    },
-    {
         "id": "3ea589fd2b313663",
         "type": "catch",
         "z": "d117d1b62f7d086e",
@@ -97,46 +77,6 @@
         "statusType": "auto",
         "x": 230,
         "y": 980,
-        "wires": []
-    },
-    {
-        "id": "ef4e1f187973c37e",
-        "type": "exec",
-        "z": "d117d1b62f7d086e",
-        "command": "NOCOLOR=true ./Scripts/systemstatus",
-        "addpay": "",
-        "append": "",
-        "useSpawn": "false",
-        "timer": "",
-        "winHide": false,
-        "oldrc": false,
-        "name": "",
-        "x": 520,
-        "y": 800,
-        "wires": [
-            [
-                "2988cc719fb018ac",
-                "966d2ffccfa8ed26"
-            ],
-            [],
-            []
-        ]
-    },
-    {
-        "id": "966d2ffccfa8ed26",
-        "type": "debug",
-        "z": "d117d1b62f7d086e",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 790,
-        "y": 760,
         "wires": []
     },
     {
@@ -375,5 +315,140 @@
                 "ee7696134c41259b"
             ]
         ]
+    },
+    {
+        "id": "b1c7433538b40c08",
+        "type": "http in",
+        "z": "1a8368cbbe1982c2",
+        "name": "/pistatus",
+        "url": "/pistatus",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 140,
+        "y": 260,
+        "wires": [
+            [
+                "aec6a6ac7dcfb2fb"
+            ]
+        ]
+    },
+    {
+        "id": "8be8c824b3a1a597",
+        "type": "http response",
+        "z": "1a8368cbbe1982c2",
+        "name": "",
+        "statusCode": "200",
+        "headers": {},
+        "x": 660,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "aec6a6ac7dcfb2fb",
+        "type": "exec",
+        "z": "1a8368cbbe1982c2",
+        "command": "NOCOLOR=true ./Scripts/systemstatus",
+        "addpay": "",
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "winHide": false,
+        "oldrc": false,
+        "name": "",
+        "x": 400,
+        "y": 260,
+        "wires": [
+            [
+                "8be8c824b3a1a597",
+                "7d3e34a3aa784db9"
+            ],
+            [
+                "7d3e34a3aa784db9"
+            ],
+            [
+                "7d3e34a3aa784db9"
+            ]
+        ]
+    },
+    {
+        "id": "7d3e34a3aa784db9",
+        "type": "debug",
+        "z": "1a8368cbbe1982c2",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 650,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "0ec389efe231462f",
+        "type": "catch",
+        "z": "1a8368cbbe1982c2",
+        "name": "",
+        "scope": null,
+        "uncaught": false,
+        "x": 140,
+        "y": 460,
+        "wires": [
+            [
+                "ec1fa2cf27e2a7ea"
+            ]
+        ]
+    },
+    {
+        "id": "ec1fa2cf27e2a7ea",
+        "type": "debug",
+        "z": "1a8368cbbe1982c2",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 270,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "2641ff882a36271e",
+        "type": "status",
+        "z": "1a8368cbbe1982c2",
+        "name": "",
+        "scope": null,
+        "x": 140,
+        "y": 500,
+        "wires": [
+            [
+                "8809eb0acd5e381c"
+            ]
+        ]
+    },
+    {
+        "id": "8809eb0acd5e381c",
+        "type": "debug",
+        "z": "1a8368cbbe1982c2",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 270,
+        "y": 500,
+        "wires": []
     }
 ]
