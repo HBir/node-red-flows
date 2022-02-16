@@ -396,7 +396,7 @@
         "y": 820,
         "wires": [
             [
-                "4725435ee8826d82"
+                "0768e54ac65e1ea0"
             ]
         ]
     },
@@ -413,9 +413,28 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 810,
-        "y": 820,
+        "x": 970,
+        "y": 800,
         "wires": []
+    },
+    {
+        "id": "0768e54ac65e1ea0",
+        "type": "function",
+        "z": "d117d1b62f7d086e",
+        "name": "",
+        "func": "var globalDeviceList = {};\nglobalDeviceList[msg.payload.name] = msg.topic;\n\nvar newList = {\n    ...global.get(\"globalDeviceList\") || {},\n    ...globalDeviceList\n}\n\n\nglobal.set(\"globalDeviceList\", newList);\n\n\n\n\nreturn {msg, newList};",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 820,
+        "y": 820,
+        "wires": [
+            [
+                "4725435ee8826d82"
+            ]
+        ]
     },
     {
         "id": "b1c7433538b40c08",
