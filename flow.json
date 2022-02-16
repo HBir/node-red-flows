@@ -381,7 +381,7 @@
         "type": "function",
         "z": "d117d1b62f7d086e",
         "name": "",
-        "func": "global.set(\"globalDeviceList\", undefined);\nreturn \"Cleared globalDeviceList\"",
+        "func": "global.set(\"globalDeviceList\", undefined);\nreturn {msg: \"Cleared globalDeviceList\"}",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
