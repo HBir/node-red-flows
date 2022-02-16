@@ -54,8 +54,8 @@
         "name": "",
         "scope": null,
         "uncaught": false,
-        "x": 100,
-        "y": 980,
+        "x": 60,
+        "y": 1140,
         "wires": [
             [
                 "04c6ca6dc91092d7"
@@ -75,8 +75,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 230,
-        "y": 980,
+        "x": 190,
+        "y": 1140,
         "wires": []
     },
     {
@@ -85,8 +85,8 @@
         "z": "d117d1b62f7d086e",
         "name": "",
         "scope": null,
-        "x": 100,
-        "y": 1020,
+        "x": 60,
+        "y": 1180,
         "wires": [
             [
                 "42c920e8031cbe7c"
@@ -98,7 +98,7 @@
         "type": "debug",
         "z": "d117d1b62f7d086e",
         "name": "",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -106,8 +106,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 230,
-        "y": 1020,
+        "x": 190,
+        "y": 1180,
         "wires": []
     },
     {
@@ -297,7 +297,8 @@
         "wires": [
             [
                 "46a4f78f13be1d63",
-                "4a8ed55ecf72e67e"
+                "4a8ed55ecf72e67e",
+                "d3a11f5fe55d9dca"
             ]
         ]
     },
@@ -334,6 +335,76 @@
         "x": 483,
         "y": 724,
         "wires": []
+    },
+    {
+        "id": "d3a11f5fe55d9dca",
+        "type": "http response",
+        "z": "d117d1b62f7d086e",
+        "name": "",
+        "statusCode": "200",
+        "headers": {},
+        "x": 340,
+        "y": 700,
+        "wires": []
+    },
+    {
+        "id": "ce4562de21eb24bc",
+        "type": "json",
+        "z": "d117d1b62f7d086e",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 170,
+        "y": 700,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "883036f9b3a53023",
+        "type": "tradfri-light-control",
+        "z": "d117d1b62f7d086e",
+        "gateway": "b2fb63b9d77e15a7",
+        "name": "",
+        "action": "{\"onOff\":false}",
+        "accessories": [
+            "65571"
+        ],
+        "groups": [],
+        "logInputErrors": true,
+        "x": 530,
+        "y": 940,
+        "wires": []
+    },
+    {
+        "id": "7928829e1332e137",
+        "type": "inject",
+        "z": "d117d1b62f7d086e",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 340,
+        "y": 940,
+        "wires": [
+            [
+                "883036f9b3a53023"
+            ]
+        ]
     },
     {
         "id": "b1c7433538b40c08",
