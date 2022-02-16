@@ -2,7 +2,7 @@
     {
         "id": "d117d1b62f7d086e",
         "type": "tab",
-        "label": "Flow 1",
+        "label": "Tradfri",
         "disabled": false,
         "info": "",
         "env": []
@@ -284,37 +284,56 @@
         ]
     },
     {
-        "id": "ee7696134c41259b",
-        "type": "tradfri-switch-control",
-        "z": "d117d1b62f7d086e",
-        "gateway": "b2fb63b9d77e15a7",
-        "name": "",
-        "action": "on",
-        "accessories": [
-            "65575"
-        ],
-        "groups": [],
-        "logInputErrors": true,
-        "x": 360,
-        "y": 720,
-        "wires": []
-    },
-    {
         "id": "94f9e5ca27ce82c1",
         "type": "http in",
         "z": "d117d1b62f7d086e",
-        "name": "/tradfri/mirror_lamps2",
-        "url": "/tradfri/mirror_lamps2",
+        "name": "/tradfri/:type/:device",
+        "url": "/tradfri/:type/:device",
         "method": "get",
         "upload": false,
         "swaggerDoc": "",
-        "x": 140,
-        "y": 720,
+        "x": 130,
+        "y": 780,
         "wires": [
             [
-                "ee7696134c41259b"
+                "46a4f78f13be1d63",
+                "4a8ed55ecf72e67e"
             ]
         ]
+    },
+    {
+        "id": "46a4f78f13be1d63",
+        "type": "tradfri-state",
+        "z": "d117d1b62f7d086e",
+        "gateway": "b2fb63b9d77e15a7",
+        "name": "",
+        "accessories": [],
+        "groups": [],
+        "logInputErrors": true,
+        "x": 330,
+        "y": 820,
+        "wires": [
+            [
+                "4a8ed55ecf72e67e"
+            ]
+        ]
+    },
+    {
+        "id": "4a8ed55ecf72e67e",
+        "type": "debug",
+        "z": "d117d1b62f7d086e",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 483,
+        "y": 724,
+        "wires": []
     },
     {
         "id": "b1c7433538b40c08",
