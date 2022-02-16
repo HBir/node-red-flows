@@ -296,7 +296,7 @@
         "y": 480,
         "wires": [
             [
-                "42aa5ec0b7738279"
+                "d72627158813dbae"
             ]
         ]
     },
@@ -305,24 +305,24 @@
         "type": "http response",
         "z": "d117d1b62f7d086e",
         "name": "",
-        "statusCode": "200",
+        "statusCode": "",
         "headers": {},
-        "x": 380,
+        "x": 430,
         "y": 480,
         "wires": []
     },
     {
-        "id": "42aa5ec0b7738279",
-        "type": "template",
+        "id": "d72627158813dbae",
+        "type": "function",
         "z": "d117d1b62f7d086e",
-        "name": "status",
-        "field": "payload",
-        "fieldType": "msg",
-        "format": "json",
-        "syntax": "plain",
-        "template": "\"test\"",
-        "output": "str",
-        "x": 250,
+        "name": "",
+        "func": "\nreturn {statusCode: 201, payload: \"something\"};",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 260,
         "y": 480,
         "wires": [
             [
