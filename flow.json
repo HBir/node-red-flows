@@ -417,7 +417,7 @@
         "type": "function",
         "z": "d117d1b62f7d086e",
         "name": "",
-        "func": "const device = msg.req.params.device.toLowerCase()\nconst deviceList = global.get(\"globalDeviceList\")\n\nconst deviceInfo = deviceList[device];\nreturn {msg: {deviceInfo}};",
+        "func": "const device = msg.req.params.device.toLowerCase()\nconst deviceList = global.get(\"globalDeviceList\")\nnode.log(\"My Logggg\");\nconst deviceInfo = deviceList[device];\nreturn {msg: {deviceInfo}};",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
