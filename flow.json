@@ -387,6 +387,37 @@
         "wires": []
     },
     {
+        "id": "6ea96e84ddc1fb55",
+        "type": "tradfri-monitor",
+        "z": "d117d1b62f7d086e",
+        "gateway": "b2fb63b9d77e15a7",
+        "name": "",
+        "x": 650,
+        "y": 820,
+        "wires": [
+            [
+                "4725435ee8826d82"
+            ]
+        ]
+    },
+    {
+        "id": "4725435ee8826d82",
+        "type": "debug",
+        "z": "d117d1b62f7d086e",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 810,
+        "y": 820,
+        "wires": []
+    },
+    {
         "id": "b1c7433538b40c08",
         "type": "http in",
         "z": "1a8368cbbe1982c2",
