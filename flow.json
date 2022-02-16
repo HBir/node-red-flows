@@ -440,7 +440,7 @@
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "<h1>Groups</h1>\n{{#payload.group}}\n  <div>{{name}}</div>\n{{/payload.group}}\n<h1>\n<h1>Devices</h1>\n{{#payload.lightbulb}}\n  <div>{{name}}</div>\n{{/payload.lightbulb}}\n{{#payload.plug}}\n  <div>{{name}}</div>\n{{/payload.plug}}\n",
+        "template": "<h3>Groups</h3>\n{{#payload.group}}\n  <div>{{name}}</div>\n{{/payload.group}}\n<h3>Devices</h3>\n{{#payload.lightbulb}}\n  <div>{{name}}</div>\n{{/payload.lightbulb}}\n{{#payload.plug}}\n  <div>{{name}}</div>\n{{/payload.plug}}\n",
         "output": "str",
         "x": 770,
         "y": 660,
