@@ -417,7 +417,7 @@
         "type": "function",
         "z": "d117d1b62f7d086e",
         "name": "",
-        "func": "\nreturn msg;",
+        "func": "const device = msg.req.params\n\nreturn {msg: {device}};",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
