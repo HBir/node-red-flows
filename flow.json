@@ -339,7 +339,6 @@
         "y": 640,
         "wires": [
             [
-                "b1f5f66129fbd2ef",
                 "d9596dbb30a60217"
             ]
         ]
@@ -366,9 +365,9 @@
         "type": "http response",
         "z": "d117d1b62f7d086e",
         "name": "",
-        "statusCode": "",
+        "statusCode": "200",
         "headers": {},
-        "x": 890,
+        "x": 900,
         "y": 600,
         "wires": []
     },
