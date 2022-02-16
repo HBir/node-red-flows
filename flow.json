@@ -328,8 +328,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 670,
-        "y": 540,
+        "x": 650,
+        "y": 520,
         "wires": []
     },
     {
@@ -354,7 +354,7 @@
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "${payload}",
+        "template": "{{payload}}",
         "output": "str",
         "x": 710,
         "y": 580,
@@ -362,6 +362,23 @@
             [
                 "344ecff5bbf8e055"
             ]
+        ]
+    },
+    {
+        "id": "ef70eb1dd1fe023b",
+        "type": "template",
+        "z": "d117d1b62f7d086e",
+        "name": "",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "This is the payload: {{payload}} !",
+        "output": "str",
+        "x": 620,
+        "y": 380,
+        "wires": [
+            []
         ]
     }
 ]
