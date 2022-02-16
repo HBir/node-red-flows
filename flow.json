@@ -24,24 +24,6 @@
         "preSharedKey": "TTtltDuaoNFmlZHX"
     },
     {
-        "id": "50afe6393fb38787",
-        "type": "http in",
-        "z": "d117d1b62f7d086e",
-        "name": "/tradfri/mirror_lamps",
-        "url": "/tradfri/mirror_lamps",
-        "method": "get",
-        "upload": false,
-        "swaggerDoc": "",
-        "x": 110,
-        "y": 520,
-        "wires": [
-            [
-                "e51696fdf2c871ae",
-                "636320b99392df67"
-            ]
-        ]
-    },
-    {
         "id": "3ea589fd2b313663",
         "type": "catch",
         "z": "d117d1b62f7d086e",
@@ -105,139 +87,6 @@
         "wires": []
     },
     {
-        "id": "e51696fdf2c871ae",
-        "type": "template",
-        "z": "d117d1b62f7d086e",
-        "name": "status",
-        "field": "payload",
-        "fieldType": "msg",
-        "format": "json",
-        "syntax": "plain",
-        "template": "status",
-        "output": "str",
-        "x": 290,
-        "y": 520,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "628fcee036910b55",
-        "type": "function",
-        "z": "d117d1b62f7d086e",
-        "name": "toggle",
-        "func": "try {\n    return {topic: \"newstate\", payload: {onOff: !msg.payload.plugList[0].onOff}};\n} catch (err) {\n    node.error(\"Error\", err);\n}",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 570,
-        "y": 520,
-        "wires": [
-            [
-                "9f939e5899deaeb0"
-            ]
-        ]
-    },
-    {
-        "id": "636320b99392df67",
-        "type": "function",
-        "z": "d117d1b62f7d086e",
-        "name": "",
-        "func": "msg.topic = \"http-initial\"\nnode.send(msg);",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 300,
-        "y": 460,
-        "wires": [
-            [
-                "9f939e5899deaeb0"
-            ]
-        ]
-    },
-    {
-        "id": "9f939e5899deaeb0",
-        "type": "join",
-        "z": "d117d1b62f7d086e",
-        "name": "",
-        "mode": "custom",
-        "build": "object",
-        "property": "payload",
-        "propertyType": "msg",
-        "key": "topic",
-        "joiner": "\\n",
-        "joinerType": "str",
-        "accumulate": false,
-        "timeout": "",
-        "count": "3",
-        "reduceRight": false,
-        "reduceExp": "",
-        "reduceInit": "",
-        "reduceInitType": "",
-        "reduceFixup": "",
-        "x": 610,
-        "y": 460,
-        "wires": [
-            [
-                "0195ddb93b151dae",
-                "84d209f2ad655824"
-            ]
-        ]
-    },
-    {
-        "id": "0195ddb93b151dae",
-        "type": "debug",
-        "z": "d117d1b62f7d086e",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 770,
-        "y": 420,
-        "wires": []
-    },
-    {
-        "id": "344ecff5bbf8e055",
-        "type": "http response",
-        "z": "d117d1b62f7d086e",
-        "name": "",
-        "statusCode": "200",
-        "headers": {
-            "content-type": "application/json"
-        },
-        "x": 920,
-        "y": 460,
-        "wires": []
-    },
-    {
-        "id": "84d209f2ad655824",
-        "type": "function",
-        "z": "d117d1b62f7d086e",
-        "name": "",
-        "func": "const device = msg.payload[\"ikea-plugs\"]\nmsg.payload = { name: device.name, newStatus: msg.payload.newstate}\nnode.send(msg);",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 780,
-        "y": 460,
-        "wires": [
-            [
-                "344ecff5bbf8e055"
-            ]
-        ]
-    },
-    {
         "id": "94f9e5ca27ce82c1",
         "type": "http in",
         "z": "d117d1b62f7d086e",
@@ -246,60 +95,13 @@
         "method": "get",
         "upload": false,
         "swaggerDoc": "",
-        "x": 80,
-        "y": 700,
+        "x": 340,
+        "y": 920,
         "wires": [
             [
-                "46a4f78f13be1d63",
-                "4a8ed55ecf72e67e",
-                "d3a11f5fe55d9dca"
+                "039b8253b7696f59"
             ]
         ]
-    },
-    {
-        "id": "46a4f78f13be1d63",
-        "type": "tradfri-state",
-        "z": "d117d1b62f7d086e",
-        "gateway": "b2fb63b9d77e15a7",
-        "name": "",
-        "accessories": [],
-        "groups": [],
-        "logInputErrors": true,
-        "x": 290,
-        "y": 740,
-        "wires": [
-            [
-                "4a8ed55ecf72e67e"
-            ]
-        ]
-    },
-    {
-        "id": "4a8ed55ecf72e67e",
-        "type": "debug",
-        "z": "d117d1b62f7d086e",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 430,
-        "y": 680,
-        "wires": []
-    },
-    {
-        "id": "d3a11f5fe55d9dca",
-        "type": "http response",
-        "z": "d117d1b62f7d086e",
-        "name": "",
-        "statusCode": "200",
-        "headers": {},
-        "x": 300,
-        "y": 620,
-        "wires": []
     },
     {
         "id": "7928829e1332e137",
@@ -318,8 +120,8 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
-        "x": 310,
-        "y": 980,
+        "x": 350,
+        "y": 860,
         "wires": [
             [
                 "039b8253b7696f59"
@@ -332,8 +134,8 @@
         "z": "d117d1b62f7d086e",
         "gateway": "b2fb63b9d77e15a7",
         "name": "",
-        "x": 650,
-        "y": 820,
+        "x": 430,
+        "y": 1140,
         "wires": [
             [
                 "0768e54ac65e1ea0"
@@ -353,8 +155,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 970,
-        "y": 820,
+        "x": 750,
+        "y": 1140,
         "wires": []
     },
     {
@@ -368,8 +170,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 820,
-        "y": 820,
+        "x": 600,
+        "y": 1140,
         "wires": [
             [
                 "4725435ee8826d82"
@@ -381,14 +183,14 @@
         "type": "function",
         "z": "d117d1b62f7d086e",
         "name": "",
-        "func": "global.set(\"globalDeviceList\", undefined);\nreturn {msg: \"Cleared globalDeviceList\"}",
+        "func": "global.set(\"globalDeviceList\", undefined);\nreturn {info: \"Cleared globalDeviceList\"}",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 820,
-        "y": 860,
+        "x": 600,
+        "y": 1180,
         "wires": [
             [
                 "8974dc3c7d79bbde"
@@ -408,8 +210,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 970,
-        "y": 860,
+        "x": 750,
+        "y": 1180,
         "wires": []
     },
     {
@@ -417,14 +219,14 @@
         "type": "function",
         "z": "d117d1b62f7d086e",
         "name": "",
-        "func": "const device = msg.req.params.device.toLowerCase()\nconst deviceList = global.get(\"globalDeviceList\")\nnode.warn(deviceList);\nconst deviceInfo = deviceList[device];\nnode.warn(deviceInfo);\n\nconst type = deviceInfo.type\n\nreturn { \n    topic: deviceInfo.instanceId,\n    payload: \"on\"\n};",
+        "func": "const device = msg.req.params.device.toLowerCase()\nconst deviceList = global.get(\"globalDeviceList\")\nnode.warn(deviceList);\nconst deviceInfo = deviceList[device];\nnode.warn(deviceInfo);\n\nconst type = deviceInfo.type\n\nconst toggle = (isOn) => ( isOn ? \"off\" : \"on\")\n\n\nreturn { \n    topic: deviceInfo.instanceId,\n    payload: toggle(deviceInfo[type].isOn)\n};",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 460,
-        "y": 980,
+        "x": 520,
+        "y": 920,
         "wires": [
             [
                 "2e2c00ca72610f7c",
@@ -445,8 +247,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 610,
-        "y": 1040,
+        "x": 670,
+        "y": 980,
         "wires": []
     },
     {
@@ -460,8 +262,8 @@
         "once": true,
         "onceDelay": 0.1,
         "topic": "",
-        "x": 650,
-        "y": 860,
+        "x": 450,
+        "y": 1180,
         "wires": [
             [
                 "77f2a35b96e8c937"
@@ -478,8 +280,8 @@
         "accessories": [],
         "groups": [],
         "logInputErrors": true,
-        "x": 820,
-        "y": 980,
+        "x": 760,
+        "y": 920,
         "wires": []
     },
     {
