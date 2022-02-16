@@ -296,7 +296,7 @@
         "y": 480,
         "wires": [
             [
-                "93451870aab0535e"
+                "42aa5ec0b7738279"
             ]
         ]
     },
@@ -307,8 +307,27 @@
         "name": "",
         "statusCode": "200",
         "headers": {},
-        "x": 280,
+        "x": 380,
         "y": 480,
         "wires": []
+    },
+    {
+        "id": "42aa5ec0b7738279",
+        "type": "template",
+        "z": "d117d1b62f7d086e",
+        "name": "status",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "json",
+        "syntax": "plain",
+        "template": "\"test\"",
+        "output": "str",
+        "x": 250,
+        "y": 480,
+        "wires": [
+            [
+                "93451870aab0535e"
+            ]
+        ]
     }
 ]
