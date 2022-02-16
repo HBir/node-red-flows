@@ -339,7 +339,8 @@
         "y": 640,
         "wires": [
             [
-                "b1f5f66129fbd2ef"
+                "b1f5f66129fbd2ef",
+                "d9596dbb30a60217"
             ]
         ]
     },
@@ -354,12 +355,10 @@
         "deviceIcon": "font-awesome/fa-plug",
         "connection": "036fc0a2e35ba47f",
         "observe": false,
-        "x": 710,
+        "x": 750,
         "y": 640,
         "wires": [
-            [
-                "d9596dbb30a60217"
-            ]
+            []
         ]
     },
     {
@@ -369,8 +368,8 @@
         "name": "",
         "statusCode": "",
         "headers": {},
-        "x": 990,
-        "y": 640,
+        "x": 890,
+        "y": 600,
         "wires": []
     },
     {
@@ -384,12 +383,30 @@
         "syntax": "plain",
         "template": "{\"payload\": \"success\",\n\"statusCode\": 200}",
         "output": "json",
-        "x": 870,
-        "y": 640,
+        "x": 730,
+        "y": 580,
         "wires": [
             [
-                "0d06dfec3a1a250a"
+                "0d06dfec3a1a250a",
+                "f24cb512ce9d380d"
             ]
         ]
+    },
+    {
+        "id": "f24cb512ce9d380d",
+        "type": "debug",
+        "z": "d117d1b62f7d086e",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 890,
+        "y": 560,
+        "wires": []
     }
 ]
