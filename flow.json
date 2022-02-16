@@ -417,7 +417,7 @@
         "type": "function",
         "z": "d117d1b62f7d086e",
         "name": "",
-        "func": "const device = msg.req.params.device.toLowerCase()\nconst deviceList = global.get(\"globalDeviceList\")\nnode.warn(deviceList);\nconst deviceInfo = deviceList[device];\nnode.warn(deviceInfo);\n\nconst type = deviceInfo.state.type\n\nreturn { \n    topic: deviceInfo.instanceId\n\n};",
+        "func": "const device = msg.req.params.device.toLowerCase()\nconst deviceList = global.get(\"globalDeviceList\")\nnode.warn(deviceList);\nconst deviceInfo = deviceList[device];\nnode.warn(deviceInfo);\n\nconst type = deviceInfo.type\n\nreturn { \n    topic: deviceInfo.instanceId\n\n};",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -427,8 +427,7 @@
         "y": 980,
         "wires": [
             [
-                "2e2c00ca72610f7c",
-                "90b5126edab69b36"
+                "2e2c00ca72610f7c"
             ]
         ]
     },
