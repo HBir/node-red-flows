@@ -327,7 +327,7 @@
         ],
         "groups": [],
         "logInputErrors": true,
-        "x": 530,
+        "x": 790,
         "y": 940,
         "wires": []
     },
@@ -342,13 +342,47 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
-        "x": 330,
+        "x": 250,
         "y": 940,
         "wires": [
             [
-                "883036f9b3a53023"
+                "6837c1021d8ceae8"
             ]
         ]
+    },
+    {
+        "id": "6837c1021d8ceae8",
+        "type": "tradfri-state",
+        "z": "d117d1b62f7d086e",
+        "gateway": "b2fb63b9d77e15a7",
+        "name": "",
+        "accessories": [],
+        "groups": [],
+        "logInputErrors": true,
+        "x": 410,
+        "y": 940,
+        "wires": [
+            [
+                "e783e351997e940c"
+            ]
+        ]
+    },
+    {
+        "id": "e783e351997e940c",
+        "type": "debug",
+        "z": "d117d1b62f7d086e",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 550,
+        "y": 940,
+        "wires": []
     },
     {
         "id": "b1c7433538b40c08",
