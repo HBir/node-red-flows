@@ -353,7 +353,7 @@
         "deviceType": "ikea-plugs",
         "deviceIcon": "font-awesome/fa-plug",
         "connection": "036fc0a2e35ba47f",
-        "observe": false,
+        "observe": true,
         "x": 710,
         "y": 640,
         "wires": [
