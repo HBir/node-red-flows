@@ -162,85 +162,6 @@
         "wires": []
     },
     {
-        "id": "b105de4f5f807779",
-        "type": "inject",
-        "z": "d117d1b62f7d086e",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "{\"onOff\":true}",
-        "payloadType": "json",
-        "x": 190,
-        "y": 520,
-        "wires": [
-            [
-                "8acda703ada39466",
-                "1c8c8a7c37c0292c"
-            ]
-        ]
-    },
-    {
-        "id": "8acda703ada39466",
-        "type": "ikea-homesmart",
-        "z": "d117d1b62f7d086e",
-        "name": "",
-        "deviceId": "65575",
-        "deviceName": "Mirror lamps",
-        "deviceType": "ikea-plugs",
-        "deviceIcon": "font-awesome/fa-plug",
-        "connection": "036fc0a2e35ba47f",
-        "observe": false,
-        "x": 410,
-        "y": 520,
-        "wires": [
-            [
-                "a1ce18931921e307"
-            ]
-        ]
-    },
-    {
-        "id": "1c8c8a7c37c0292c",
-        "type": "debug",
-        "z": "d117d1b62f7d086e",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 370,
-        "y": 460,
-        "wires": []
-    },
-    {
-        "id": "a1ce18931921e307",
-        "type": "debug",
-        "z": "d117d1b62f7d086e",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 570,
-        "y": 520,
-        "wires": []
-    },
-    {
         "id": "ca4355f86d3d201f",
         "type": "ikea-homesmart",
         "z": "d117d1b62f7d086e",
@@ -260,23 +181,6 @@
         ]
     },
     {
-        "id": "020c3f1ea37139dc",
-        "type": "function",
-        "z": "d117d1b62f7d086e",
-        "name": "",
-        "func": "\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 240,
-        "y": 580,
-        "wires": [
-            []
-        ]
-    },
-    {
         "id": "e51696fdf2c871ae",
         "type": "template",
         "z": "d117d1b62f7d086e",
@@ -292,35 +196,6 @@
         "wires": [
             [
                 "ca4355f86d3d201f"
-            ]
-        ]
-    },
-    {
-        "id": "6c796f082a771a59",
-        "type": "inject",
-        "z": "d117d1b62f7d086e",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 140,
-        "y": 680,
-        "wires": [
-            [
-                "e51696fdf2c871ae"
             ]
         ]
     },
@@ -354,8 +229,8 @@
         "deviceIcon": "font-awesome/fa-plug",
         "connection": "036fc0a2e35ba47f",
         "observe": false,
-        "x": 750,
-        "y": 640,
+        "x": 630,
+        "y": 540,
         "wires": [
             []
         ]
@@ -368,7 +243,7 @@
         "statusCode": "200",
         "headers": {},
         "x": 900,
-        "y": 600,
+        "y": 660,
         "wires": []
     },
     {
@@ -383,7 +258,7 @@
         "template": "\"test\"",
         "output": "str",
         "x": 730,
-        "y": 580,
+        "y": 640,
         "wires": [
             [
                 "0d06dfec3a1a250a",
@@ -405,7 +280,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 890,
-        "y": 560,
+        "y": 620,
         "wires": []
     }
 ]
