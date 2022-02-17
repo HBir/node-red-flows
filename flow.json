@@ -848,7 +848,7 @@
         "id": "dbb0bd8f.7242a",
         "type": "uibuilder",
         "z": "7827694ff4b0dc7d",
-        "name": "",
+        "name": "demo",
         "topic": "",
         "url": "demo",
         "fwdInMessages": false,
