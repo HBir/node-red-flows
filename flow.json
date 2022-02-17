@@ -39,7 +39,7 @@
         "scope": null,
         "uncaught": false,
         "x": 200,
-        "y": 780,
+        "y": 920,
         "wires": [
             [
                 "04c6ca6dc91092d7"
@@ -60,7 +60,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 330,
-        "y": 780,
+        "y": 920,
         "wires": []
     },
     {
@@ -70,7 +70,7 @@
         "name": "",
         "scope": null,
         "x": 200,
-        "y": 840,
+        "y": 980,
         "wires": [
             [
                 "42c920e8031cbe7c"
@@ -86,8 +86,8 @@
         "method": "get",
         "upload": false,
         "swaggerDoc": "",
-        "x": 360,
-        "y": 500,
+        "x": 340,
+        "y": 340,
         "wires": [
             [
                 "039b8253b7696f59"
@@ -111,8 +111,8 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
-        "x": 350,
-        "y": 380,
+        "x": 330,
+        "y": 220,
         "wires": [
             [
                 "039b8253b7696f59"
@@ -125,7 +125,7 @@
         "z": "d117d1b62f7d086e",
         "gateway": "b2fb63b9d77e15a7",
         "name": "",
-        "x": 110,
+        "x": 70,
         "y": 680,
         "wires": [
             [
@@ -146,8 +146,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 450,
-        "y": 720,
+        "x": 490,
+        "y": 740,
         "wires": []
     },
     {
@@ -161,12 +161,12 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 290,
+        "x": 310,
         "y": 680,
         "wires": [
             [
                 "4725435ee8826d82",
-                "67fd39a02f5fe012"
+                "d7b6dccd1d42e2c8"
             ]
         ]
     },
@@ -182,7 +182,7 @@
         "finalize": "",
         "libs": [],
         "x": 760,
-        "y": 840,
+        "y": 980,
         "wires": [
             [
                 "8974dc3c7d79bbde"
@@ -203,7 +203,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 950,
-        "y": 840,
+        "y": 980,
         "wires": []
     },
     {
@@ -217,8 +217,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 560,
-        "y": 500,
+        "x": 540,
+        "y": 340,
         "wires": [
             [
                 "2e2c00ca72610f7c",
@@ -240,8 +240,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 730,
-        "y": 560,
+        "x": 710,
+        "y": 400,
         "wires": []
     },
     {
@@ -256,7 +256,7 @@
         "onceDelay": 0.1,
         "topic": "",
         "x": 570,
-        "y": 840,
+        "y": 980,
         "wires": [
             [
                 "77f2a35b96e8c937"
@@ -273,8 +273,8 @@
         "accessories": [],
         "groups": [],
         "logInputErrors": true,
-        "x": 760,
-        "y": 500,
+        "x": 740,
+        "y": 340,
         "wires": []
     },
     {
@@ -294,8 +294,8 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
-        "x": 330,
-        "y": 340,
+        "x": 310,
+        "y": 180,
         "wires": [
             [
                 "039b8253b7696f59"
@@ -319,8 +319,8 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
-        "x": 360,
-        "y": 300,
+        "x": 340,
+        "y": 140,
         "wires": [
             [
                 "039b8253b7696f59"
@@ -334,8 +334,8 @@
         "name": "",
         "statusCode": "",
         "headers": {},
-        "x": 730,
-        "y": 440,
+        "x": 710,
+        "y": 280,
         "wires": []
     },
     {
@@ -344,8 +344,8 @@
         "z": "d117d1b62f7d086e",
         "name": "Debug nodes",
         "info": "",
-        "x": 350,
-        "y": 260,
+        "x": 330,
+        "y": 100,
         "wires": []
     },
     {
@@ -354,8 +354,8 @@
         "z": "d117d1b62f7d086e",
         "name": "TODO:",
         "info": "Groups onOff status are not updated \nwhen induvidual devices have their status\nchanged.\n\nHack fix for this is to that each time the\nstate of a device is changed, update \nthe global variable state of the device's\ngroup.",
-        "x": 570,
-        "y": 420,
+        "x": 550,
+        "y": 260,
         "wires": []
     },
     {
@@ -372,7 +372,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 330,
-        "y": 840,
+        "y": 980,
         "wires": []
     },
     {
@@ -385,7 +385,7 @@
         "upload": false,
         "swaggerDoc": "",
         "x": 980,
-        "y": 560,
+        "y": 380,
         "wires": [
             []
         ]
@@ -401,7 +401,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 500,
+        "x": 720,
         "y": 660,
         "wires": [
             [
@@ -423,7 +423,7 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 750,
+        "x": 930,
         "y": 620,
         "wires": []
     },
@@ -439,7 +439,7 @@
         "template": "{{=<% %>=}}\n\n<html lang=\"en\">\n  <head>\n    <title>Tradfri dashboard</title>\n    <meta charset=\"utf-8\" />\n    <meta name=\"viewport\" content=\"initial-scale=1, width=device-width\" />\n    <script src=\"https://unpkg.com/react@latest/umd/react.development.js\" crossorigin=\"anonymous\"></script>\n    <script src=\"https://unpkg.com/react-dom@latest/umd/react-dom.development.js\"></script>\n    <script src=\"https://unpkg.com/@mui/material@latest/umd/material-ui.development.js\" crossorigin=\"anonymous\"></script>\n    <script src=\"https://unpkg.com/babel-standalone@latest/babel.min.js\" crossorigin=\"anonymous\"></script>\n    <!-- Fonts to support Material Design -->\n    <link rel=\"stylesheet\" href=\"https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap\" />\n    <!-- Icons to support Material Design -->\n    <link rel=\"stylesheet\" href=\"https://fonts.googleapis.com/icon?family=Material+Icons\" />\n  </head>\n  <body>\n    <div id=\"root\"></div>\n    <script type=\"text/babel\">\n\nconst {\n  colors,\n  CssBaseline,\n  ThemeProvider,\n  Typography,\n  Container,\n  createTheme,\n  Box,\n  SvgIcon,\n  Link,\n  Button,\n  Card,\n  CardActions,\n  CardContent\n} = MaterialUI;\n\n// Create a theme instance.\nconst theme = createTheme({\n  palette: {\n    primary: {\n      main: '#556cd6',\n    },\n    secondary: {\n      main: '#19857b',\n    },\n    error: {\n      main: colors.red.A400,\n    },\n  },\n});\n<%={{ }}=%>\nconst data = {{{ payload }}}\n{{=<% %>=}}\nconsole.log(data)\n\n\nfunction LightBulbIcon(props) {\n  return (\n    <SvgIcon {...props}>\n      <path d=\"M9 21c0 .55.45 1 1 1h4c.55 0 1-.45 1-1v-1H9v1zm3-19C8.14 2 5 5.14 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.86-3.14-7-7-7zm2.85 11.1l-.85.6V16h-4v-2.3l-.85-.6C7.8 12.16 7 10.63 7 9c0-2.76 2.24-5 5-5s5 2.24 5 5c0 1.63-.8 3.16-2.15 4.1z\" />\n    </SvgIcon>\n  );\n}\n\nfunction ProTip() {\n  return (\n    <Typography sx={{ mt: 6, mb: 3 }} color=\"text.secondary\">\n      <LightBulbIcon sx={{ mr: 1, verticalAlign: 'top' }} />\n      Pro tip: See more{' '}\n      <Link href=\"https://mui.com/getting-started/templates/\">\n        templates\n      </Link>{' '}\n      on the MUI documentation.\n    </Typography>\n  );\n}\n\nfunction Copyright() {\n  return (\n    <Typography variant=\"body2\" color=\"text.secondary\" align=\"center\">\n      {'Copyright © '}\n      <Link color=\"inherit\" href=\"https://mui.com/\">\n        Your Website\n      </Link>{' '}\n      {new Date().getFullYear()}\n      {'.'}\n    </Typography>\n  );\n}\n\nconst DeviceCard = (props) => (\n    <Card sx={{ minWidth: 275 }}>\n      <CardContent>\n        <Typography sx={{ fontSize: 14 }} color=\"text.secondary\" gutterBottom>\n          Word of the Day\n        </Typography>\n        <Typography variant=\"h5\" component=\"div\">\n          {props.name}\n        </Typography>\n        <Typography sx={{ mb: 1.5 }} color=\"text.secondary\">\n          adjective\n        </Typography>\n        <Typography variant=\"body2\">\n          well meaning and kindly.\n          <br />\n          {'\"a benevolent smile\"'}\n        </Typography>\n      </CardContent>\n      <CardActions>\n        <Button size=\"small\">Learn More</Button>\n      </CardActions>\n    </Card>\n);\n\nconst GroupBox (props) => (\n  <Typography key={props.key} variant=\"h4\" component=\"h1\" gutterBottom>\n    {props.name}\n  </Typography>\n)\n\nfunction App() {\n  return (\n    <Container maxWidth=\"sm\">\n      <Box sx={{ my: 4 }}>\n        <Typography variant=\"h3\" component=\"h1\" gutterBottom>\n          Tradfri dashboard\n        </Typography>\n        {data.map((group) => {\n          return (<GroupBox key={group.key} props={group} />)\n        })}\n        <ProTip />\n        <Copyright />\n      </Box>\n    </Container>\n  );\n}\n\nReactDOM.render(\n    <ThemeProvider theme={theme}>\n      {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}\n      <CssBaseline />\n      <App />\n    </ThemeProvider>,\n  document.querySelector('#root'),\n);\n    </script>\n  </body>\n</html>\n<%={{ }}=%>",
         "output": "str",
         "x": 970,
-        "y": 640,
+        "y": 320,
         "wires": [
             []
         ]
@@ -463,7 +463,7 @@
         "tokenAutoExtend": false,
         "reload": false,
         "sourceFolder": "src",
-        "x": 770,
+        "x": 950,
         "y": 680,
         "wires": [
             [],
@@ -481,12 +481,60 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
-        "x": 310,
-        "y": 620,
+        "x": 550,
+        "y": 580,
         "wires": [
             [
                 "67fd39a02f5fe012"
             ]
+        ]
+    },
+    {
+        "id": "d7b6dccd1d42e2c8",
+        "type": "delay",
+        "z": "d117d1b62f7d086e",
+        "name": "",
+        "pauseType": "rate",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": true,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 510,
+        "y": 680,
+        "wires": [
+            [
+                "67fd39a02f5fe012"
+            ]
+        ]
+    },
+    {
+        "id": "5321a58467d0e255",
+        "type": "trigger",
+        "z": "d117d1b62f7d086e",
+        "name": "",
+        "op1": "1",
+        "op2": "0",
+        "op1type": "str",
+        "op2type": "str",
+        "duration": "250",
+        "extend": false,
+        "overrideDelay": false,
+        "units": "ms",
+        "reset": "",
+        "bytopic": "all",
+        "topic": "topic",
+        "outputs": 1,
+        "x": 180,
+        "y": 800,
+        "wires": [
+            []
         ]
     },
     {
