@@ -471,6 +471,25 @@
         ]
     },
     {
+        "id": "1abed18d4592f022",
+        "type": "inject",
+        "z": "d117d1b62f7d086e",
+        "name": "poke",
+        "props": [],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 310,
+        "y": 620,
+        "wires": [
+            [
+                "67fd39a02f5fe012"
+            ]
+        ]
+    },
+    {
         "id": "b1c7433538b40c08",
         "type": "http in",
         "z": "1a8368cbbe1982c2",
