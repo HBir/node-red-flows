@@ -842,31 +842,5 @@
                 "16169222.b4d91e"
             ]
         ]
-    },
-    {
-        "id": "dbb0bd8f.7242a",
-        "type": "uibuilder",
-        "z": "7827694ff4b0dc7d",
-        "name": "demo",
-        "topic": "",
-        "url": "demo",
-        "fwdInMessages": false,
-        "allowScripts": false,
-        "allowStyles": false,
-        "copyIndex": true,
-        "templateFolder": "vue",
-        "extTemplate": "",
-        "showfolder": false,
-        "useSecurity": false,
-        "sessionLength": "",
-        "tokenAutoExtend": false,
-        "reload": true,
-        "sourceFolder": "src",
-        "x": 510,
-        "y": 300,
-        "wires": [
-            [],
-            []
-        ]
     }
 ]
