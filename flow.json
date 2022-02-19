@@ -146,7 +146,7 @@
         "type": "function",
         "z": "d117d1b62f7d086e",
         "name": "updateDeviceList",
-        "func": "try {\n    let newList = {}\n    if (msg.payload.name) {\n        const newDeviceVals = {};\n\n        const name = (msg.payload.name || \"\").toLowerCase()\n        newDeviceVals[name] = msg.payload\n        newList = {\n            ...global.get(\"globalDeviceList\") || {},\n            ...newDeviceVals\n        }\n        global.set(\"globalDeviceList\", newList);\n    }\n    \n    return { msg, deviceList: newList };\n} catch (err) {\n    node.error(err)\n    return {msg, err}\n}",
+        "func": "try {\n    let newList = {}\n    if (msg.payload.name) {\n        const newDeviceVals = {};\n\n        const name = (msg.payload.name || \"\").toLowerCase()\n        newDeviceVals[name] = msg.payload\n        newList = {\n            ...global.get(\"globalDeviceList\") || {},\n            ...newDeviceVals\n        }\n        global.set(\"globalDeviceList\", newList);\n    }\n    \n    return { deviceList: newList };\n} catch (err) {\n    node.error(err)\n    return {msg, err}\n}",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
