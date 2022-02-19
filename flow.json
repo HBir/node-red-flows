@@ -154,7 +154,7 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 730,
+        "x": 930,
         "y": 760,
         "wires": []
     },
@@ -173,7 +173,7 @@
         "y": 760,
         "wires": [
             [
-                "4725435ee8826d82"
+                "c132d739c4cf4ffc"
             ]
         ]
     },
@@ -543,6 +543,42 @@
         "wires": [
             [
                 "0768e54ac65e1ea0"
+            ]
+        ]
+    },
+    {
+        "id": "e97507d2a9c97732",
+        "type": "function",
+        "z": "d117d1b62f7d086e",
+        "name": "",
+        "func": "\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 160,
+        "y": 580,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c132d739c4cf4ffc",
+        "type": "function",
+        "z": "d117d1b62f7d086e",
+        "name": "getAndSortAllDevices",
+        "func": "const formatGroups = (devices) => Object.keys(devices).reduce(\n    (prev, key) =>\n    ((devices[key].type === 'group' && devices[key].name !== 'SuperGroup') ? [\n        ...(prev || []),\n        {\n            key,\n            name: devices[key].name,\n            type: devices[key].type,\n            instanceId: devices[key].instanceId,\n            alive: devices[key].alive,\n            state: devices[key][devices[key].type] || { isOn: devices[key].isOn },\n            deviceIds: devices[key].deviceIds,\n        }]\n        : prev),\n    [],\n);\n\nconst formatDevices = (devices) => Object.keys(devices).reduce((prev, key) => ({\n    ...prev,\n    [devices[key].instanceId]: {\n        key,\n        name: devices[key].name,\n        type: devices[key].type,\n        instanceId: devices[key].instanceId,\n        alive: devices[key].alive,\n        state: devices[key][devices[key].type] || { isOn: devices[key].isOn },\n        deviceIds: devices[key].deviceIds,\n    }\n}), {});\n\nconst categorizeByDeviceType = (devices) =>\n    devices.reduce((prev, curr) => ({\n        ...prev,\n        [curr.type]: [\n            ...(prev[curr.type] || []),\n            curr,\n        ],\n    }), {});\n\nconst categorizeByGroup = (groups, devices) =>\n    groups.map((group) => ({\n        ...group,\n        devices: group.deviceIds.reduce(\n            (prev, deviceId) =>\n            ((devices[deviceId] && ['lightbulb', 'plug'].includes(devices[deviceId].type) ) ? [\n                ...prev,\n                devices[deviceId],\n            ] : prev),\n            [],\n        ),\n    }));\n\nfunction getAndSortAllDevices() {\n    const devices = global.get('globalDeviceList');\n    node.warn(devices)\n    const groups = formatGroups(devices);\n    const formattedDevices = formatDevices(devices);\n\n    // const categorizedDevices = categorizeByDeviceType(formattedDevices)\n    return categorizeByGroup(groups, formattedDevices);\n}\n\nreturn {\n    payload: getAndSortAllDevices(),\n    res: msg.res\n};",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 760,
+        "y": 760,
+        "wires": [
+            [
+                "4725435ee8826d82"
             ]
         ]
     },
