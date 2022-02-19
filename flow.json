@@ -133,8 +133,8 @@
         "z": "d117d1b62f7d086e",
         "gateway": "b2fb63b9d77e15a7",
         "name": "",
-        "x": 70,
-        "y": 680,
+        "x": 350,
+        "y": 760,
         "wires": [
             [
                 "0768e54ac65e1ea0"
@@ -154,8 +154,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 490,
-        "y": 740,
+        "x": 730,
+        "y": 760,
         "wires": []
     },
     {
@@ -163,18 +163,17 @@
         "type": "function",
         "z": "d117d1b62f7d086e",
         "name": "updateDeviceList",
-        "func": "try {\n    const globalDeviceList = {};\n    const name = msg.payload.name.toLowerCase()\n    globalDeviceList[name] = msg.payload\n\n    const newList = {\n        ...global.get(\"globalDeviceList\") || {},\n        ...globalDeviceList\n    }\n\n\n    global.set(\"globalDeviceList\", newList);\n    return { msg, deviceList: newList };\n} catch (err) {\n    node.error(err)\n    return {msg, err}\n}",
+        "func": "try {\n    const newDeviceVals = {};\n    const name = msg.payload.name.toLowerCase()\n    newDeviceVals[name] = msg.payload\n\n    const newList = {\n        ...global.get(\"globalDeviceList\") || {},\n        ...newDeviceVals\n    }\n\n\n    global.set(\"globalDeviceList\", newList);\n    return { msg, deviceList: newList };\n} catch (err) {\n    node.error(err)\n    return {msg, err}\n}",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 310,
-        "y": 680,
+        "x": 550,
+        "y": 760,
         "wires": [
             [
-                "4725435ee8826d82",
-                "d7b6dccd1d42e2c8"
+                "4725435ee8826d82"
             ]
         ]
     },
@@ -410,7 +409,7 @@
         "finalize": "",
         "libs": [],
         "x": 720,
-        "y": 660,
+        "y": 580,
         "wires": [
             [
                 "e4fa75504074f24d",
@@ -432,7 +431,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 930,
-        "y": 620,
+        "y": 540,
         "wires": []
     },
     {
@@ -472,7 +471,7 @@
         "reload": false,
         "sourceFolder": "src",
         "x": 950,
-        "y": 680,
+        "y": 600,
         "wires": [
             [],
             []
@@ -490,7 +489,7 @@
         "onceDelay": 0.1,
         "topic": "",
         "x": 550,
-        "y": 580,
+        "y": 500,
         "wires": [
             [
                 "67fd39a02f5fe012"
@@ -515,7 +514,7 @@
         "allowrate": false,
         "outputs": 1,
         "x": 510,
-        "y": 680,
+        "y": 600,
         "wires": [
             [
                 "67fd39a02f5fe012"
@@ -523,26 +522,28 @@
         ]
     },
     {
-        "id": "5321a58467d0e255",
-        "type": "trigger",
+        "id": "965f2bfde3b40349",
+        "type": "inject",
         "z": "d117d1b62f7d086e",
         "name": "",
-        "op1": "1",
-        "op2": "0",
-        "op1type": "str",
-        "op2type": "str",
-        "duration": "250",
-        "extend": false,
-        "overrideDelay": false,
-        "units": "ms",
-        "reset": "",
-        "bytopic": "all",
-        "topic": "topic",
-        "outputs": 1,
-        "x": 180,
-        "y": 800,
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{}",
+        "payloadType": "json",
+        "x": 350,
+        "y": 700,
         "wires": [
-            []
+            [
+                "0768e54ac65e1ea0"
+            ]
         ]
     },
     {
