@@ -132,8 +132,8 @@
         "type": "tradfri-monitor",
         "z": "d117d1b62f7d086e",
         "gateway": "b2fb63b9d77e15a7",
-        "name": "",
-        "x": 350,
+        "name": "Devices Updated",
+        "x": 340,
         "y": 760,
         "wires": [
             [
@@ -543,8 +543,27 @@
         "x": 740,
         "y": 760,
         "wires": [
-            []
+            [
+                "d3c61acc435bf984"
+            ]
         ]
+    },
+    {
+        "id": "d3c61acc435bf984",
+        "type": "debug",
+        "z": "d117d1b62f7d086e",
+        "name": "log",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 890,
+        "y": 760,
+        "wires": []
     },
     {
         "id": "b1c7433538b40c08",
