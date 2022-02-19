@@ -146,7 +146,7 @@
         "type": "function",
         "z": "d117d1b62f7d086e",
         "name": "updateDeviceList",
-        "func": "\n\ntry {\n    let newList = {}\n    if (msg.payload.name) {\n        const newDeviceVals = {};\n\n        const name = (msg.payload.name || \"\").toLowerCase()\n        newDeviceVals[name] = msg.payload\n        const deviceList = global.get(\"globalDeviceList\");\n        newList = {\n            ...deviceList || {},\n            ...newDeviceVals,\n            _nameMapping: {\n                ...((deviceList || {})._nameMapping || {}),\n                [name]: msg.payload.instanceId,\n            }\n        }\n\n        // updateGroup()\n\n        global.set(\"globalDeviceList\", newList);\n    }\n    \n    return { deviceList: newList };\n} catch (err) {\n    node.error(err)\n    return {msg, err}\n}",
+        "func": "\n\ntry {\n    let newList = {}\n    if (msg.payload.name) {\n        const newDeviceVals = {};\n\n        const name = (msg.payload.name || \"\").toLowerCase()\n        newDeviceVals[msg.payload.instanceId] = msg.payload\n        const deviceList = global.get(\"globalDeviceList\");\n        newList = {\n            ...deviceList || {},\n            ...newDeviceVals,\n            _nameMapping: {\n                ...((deviceList || {})._nameMapping || {}),\n                [name]: msg.payload.instanceId,\n            }\n        }\n\n        // updateGroup()\n\n        global.set(\"globalDeviceList\", newList);\n    }\n    \n    return { deviceList: newList };\n} catch (err) {\n    node.error(err)\n    return {msg, err}\n}",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
