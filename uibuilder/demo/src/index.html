@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
+
+    <title>Node-RED UI Builder - VueJS + bootstrap-vue version</title>
+    <meta name="description" content="Node-RED UI Builder - VueJS + bootstrap-vue version">
+
+    <link rel="icon" href="./images/node-blue.ico">
+
+    <link type="text/css" rel="stylesheet" href="../uibuilder/vendor/bootstrap/dist/css/bootstrap.min.css" />
+    <link type="text/css" rel="stylesheet" href="../uibuilder/vendor/bootstrap-vue/dist/bootstrap-vue.css" />
+    <link rel="stylesheet" href="./index.css" media="all">
+</head>
+
+<body>
+    <div id="app">
+        <!-- Self closing tags in general WON'T work with http-vue-loader!!! -->
+        <router-view name="menu"></router-view>
+        <b-container fluid>
+            <router-view></router-view>
+        </b-container>
+    </div>
+
+    <script src="../uibuilder/vendor/socket.io/socket.io.js"></script>
+    <script src="../uibuilder/vendor/vue/dist/vue.js"></script> <!-- dev version with component compiler -->
+    <script src="../uibuilder/vendor/bootstrap-vue/dist/bootstrap-vue.js"></script>
+
+    <!-- HTTP Vue Loader -->
+    <script src="../uibuilder/vendor/http-vue-loader/src/httpVueLoader.js"></script>
+
+    <!-- VueX -->
+    <script src="../uibuilder/vendor/vuex/dist/vuex.js"></script>
+    <!-- Vue Router -->
+    <script src="../uibuilder/vendor/vue-router/dist/vue-router.js"></script>
+
+
+    <script src="./uibuilderfe.min.js"></script> <!--    //prod version -->
+    <script src="./index.js" type="module"></script>
+
+</body>
+
+</html>
