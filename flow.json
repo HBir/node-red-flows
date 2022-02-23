@@ -692,7 +692,7 @@
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "{{#formatted}}\n  <div>{{.}}</div>\n{{/formatted}}",
+        "template": "<head>\n  <link href=\"https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css\" rel=\"stylesheet\">\n  <script src=\"https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js\"></script>\n</head>\n{{#formatted}}\n  <div>{{.}}</div>\n{{/formatted}}",
         "output": "str",
         "x": 840,
         "y": 180,
