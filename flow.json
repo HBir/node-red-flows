@@ -580,7 +580,7 @@
         "id": "aec6a6ac7dcfb2fb",
         "type": "exec",
         "z": "1a8368cbbe1982c2",
-        "command": "./Scripts/systemstatus",
+        "command": "NO_COLOR=true ./Scripts/systemstatus",
         "addpay": "",
         "append": "",
         "useSpawn": "false",
@@ -588,7 +588,7 @@
         "winHide": false,
         "oldrc": false,
         "name": "",
-        "x": 340,
+        "x": 400,
         "y": 260,
         "wires": [
             [
@@ -727,7 +727,7 @@
         "type": "debug",
         "z": "1a8368cbbe1982c2",
         "name": "",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
