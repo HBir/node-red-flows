@@ -707,7 +707,7 @@
         "type": "function",
         "z": "1a8368cbbe1982c2",
         "name": "",
-        "func": "const data = msg.payload;\n\n\n\nconst splitData = data.split(/\\r?\\n/);\n\nconst formatted = splitData.map((row) => {\n    const textClass = !row.includes('[✗]') ? 'mui--text-danger' : 'mui--text-dark'\n    return { message: row, textClass}\n})\nreturn {...msg, formatted};",
+        "func": "const data = msg.payload;\n\n\n\nconst splitData = data.split(/\\r?\\n/);\n\nconst formatted = splitData.map((row) => {\n    const textClass = row.includes('[✗]') ? 'mui--text-danger' : 'mui--text-dark'\n    return { message: row, textClass}\n})\nreturn {...msg, formatted};",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
