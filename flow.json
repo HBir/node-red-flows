@@ -707,7 +707,7 @@
         "type": "function",
         "z": "1a8368cbbe1982c2",
         "name": "",
-        "func": "const data = msg.payload.toString();\nnode.warn(data)\n\nconst colorizeText = (string) => \n    string.replace('[0;32m', '<span class=\"green\">')\n        .replace('[0;31m', '<span class=\"red\">')\n        .replace('[0m', '</span>')\n\nconst splitData = data.split(/\\r?\\n/);\n\nconst formatted = splitData.map((row) => {\n    const textClass = row.includes('[✗]') ? 'mui--text-danger' : 'mui--text-light'\n    return { message: colorizeText(row), textClass}\n})\nnode.warn(formatted)\nreturn {...msg, formatted};",
+        "func": "const data = msg.payload.toString();\nnode.warn(data)\n\nconst colorizeText = (string) => \n    string.replace('[0;32m', '<span style=\"color: green;\">')\n        .replace('[0;31m', '<span class=\"mui--text-danger\">')\n        .replace('[0m', '</span>')\n\nconst splitData = data.split(/\\r?\\n/);\n\nconst formatted = splitData.map((row) => {\n    const textClass = row.includes('[✗]') ? 'mui--text-danger' : 'mui--text-light'\n    return { message: colorizeText(row), textClass}\n})\nnode.warn(formatted)\nreturn {...msg, formatted};",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
