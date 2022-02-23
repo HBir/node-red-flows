@@ -692,7 +692,7 @@
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "{{#formatted}}\n  <b>{{.}}</b>\n{{/formatted}}",
+        "template": "{{#formatted}}\n  <div>{{.}}</div>\n{{/formatted}}",
         "output": "str",
         "x": 840,
         "y": 180,
