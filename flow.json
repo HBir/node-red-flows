@@ -572,7 +572,7 @@
         "headers": {
             "Content-Type": " text/html; charset=UTF-8"
         },
-        "x": 660,
+        "x": 820,
         "y": 220,
         "wires": []
     },
@@ -592,8 +592,8 @@
         "y": 260,
         "wires": [
             [
-                "8be8c824b3a1a597",
-                "7d3e34a3aa784db9"
+                "7d3e34a3aa784db9",
+                "293594f99cae323c"
             ],
             [
                 "7d3e34a3aa784db9"
@@ -682,6 +682,25 @@
         "x": 270,
         "y": 500,
         "wires": []
+    },
+    {
+        "id": "293594f99cae323c",
+        "type": "template",
+        "z": "1a8368cbbe1982c2",
+        "name": "",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "{{payload}}",
+        "output": "str",
+        "x": 680,
+        "y": 200,
+        "wires": [
+            [
+                "8be8c824b3a1a597"
+            ]
+        ]
     },
     {
         "id": "3a85e836.06b698",
