@@ -580,7 +580,7 @@
         "id": "aec6a6ac7dcfb2fb",
         "type": "exec",
         "z": "1a8368cbbe1982c2",
-        "command": "NO_COLOR=true ./Scripts/systemstatus",
+        "command": "NOCOLOR=true ./Scripts/systemstatus",
         "addpay": "",
         "append": "",
         "useSpawn": "false",
