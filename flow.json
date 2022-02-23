@@ -569,7 +569,9 @@
         "z": "1a8368cbbe1982c2",
         "name": "",
         "statusCode": "200",
-        "headers": {},
+        "headers": {
+            "Content-Type": " text/html; charset=UTF-8"
+        },
         "x": 660,
         "y": 220,
         "wires": []
