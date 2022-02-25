@@ -430,6 +430,7 @@
         "id": "4311bdc226d30fc5",
         "type": "uibuilder",
         "z": "d117d1b62f7d086e",
+        "d": true,
         "name": "",
         "topic": "",
         "url": "dashboard",
