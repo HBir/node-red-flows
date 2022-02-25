@@ -331,16 +331,6 @@
         "wires": []
     },
     {
-        "id": "4fd61c70026094f7",
-        "type": "comment",
-        "z": "d117d1b62f7d086e",
-        "name": "TODO:",
-        "info": "Groups onOff status are not updated \nwhen induvidual devices have their status\nchanged.\n\nHack fix for this is to that each time the\nstate of a device is changed, update \nthe global variable state of the device's\ngroup.",
-        "x": 550,
-        "y": 260,
-        "wires": []
-    },
-    {
         "id": "42c920e8031cbe7c",
         "type": "debug",
         "z": "d117d1b62f7d086e",
