@@ -24,14 +24,6 @@
         "env": []
     },
     {
-        "id": "7827694ff4b0dc7d",
-        "type": "tab",
-        "label": "Flow 2",
-        "disabled": false,
-        "info": "",
-        "env": []
-    },
-    {
         "id": "b2fb63b9d77e15a7",
         "type": "tradfri-config",
         "name": "tradfri config",
@@ -801,6 +793,7 @@
         "id": "eb95241.bca25d8",
         "type": "uibuilder",
         "z": "c54321938fa1bb97",
+        "d": true,
         "name": "Simple Example",
         "topic": "",
         "url": "uib_simple",
