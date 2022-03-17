@@ -1,0 +1,699 @@
+[
+    {
+        "id": "d117d1b62f7d086e",
+        "type": "tab",
+        "label": "Tradfri",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "1a8368cbbe1982c2",
+        "type": "tab",
+        "label": "Pi status",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "b2fb63b9d77e15a7",
+        "type": "tradfri-config",
+        "name": "tradfri config",
+        "gatewayHost": "10.1.0.36",
+        "identity": "tradfri_1647508878733",
+        "preSharedKey": "L7Svu566cn6owjR9"
+    },
+    {
+        "id": "3ea589fd2b313663",
+        "type": "catch",
+        "z": "d117d1b62f7d086e",
+        "name": "",
+        "scope": null,
+        "uncaught": false,
+        "x": 200,
+        "y": 920,
+        "wires": [
+            [
+                "04c6ca6dc91092d7"
+            ]
+        ]
+    },
+    {
+        "id": "04c6ca6dc91092d7",
+        "type": "debug",
+        "z": "d117d1b62f7d086e",
+        "name": "log",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 330,
+        "y": 920,
+        "wires": []
+    },
+    {
+        "id": "f28bc0dc4af57029",
+        "type": "status",
+        "z": "d117d1b62f7d086e",
+        "name": "",
+        "scope": null,
+        "x": 200,
+        "y": 980,
+        "wires": [
+            [
+                "42c920e8031cbe7c"
+            ]
+        ]
+    },
+    {
+        "id": "94f9e5ca27ce82c1",
+        "type": "http in",
+        "z": "d117d1b62f7d086e",
+        "name": "/tradfri/:device",
+        "url": "/tradfri/:device",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 340,
+        "y": 340,
+        "wires": [
+            [
+                "039b8253b7696f59"
+            ]
+        ]
+    },
+    {
+        "id": "7928829e1332e137",
+        "type": "inject",
+        "z": "d117d1b62f7d086e",
+        "name": "Mirror lamps",
+        "props": [
+            {
+                "p": "req.params",
+                "v": "{\"device\": \"Mirror lamps\"}",
+                "vt": "json"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 330,
+        "y": 220,
+        "wires": [
+            [
+                "039b8253b7696f59"
+            ]
+        ]
+    },
+    {
+        "id": "0768e54ac65e1ea0",
+        "type": "function",
+        "z": "d117d1b62f7d086e",
+        "name": "updateDeviceList",
+        "func": "\ntry {\n    let updatedList = {}\n    if (msg.payload.name) {\n        const newDeviceVals = {};\n        const newDevice = msg.payload;\n\n        const name = (newDevice.name || \"\").toLowerCase()\n        const deviceList = global.get(\"globalDeviceList\") || {};\n        const status = newDevice.blind || newDevice.lightbulb || newDevice.plug || newDevice.sensor\n        newDeviceVals[newDevice.instanceId] = {\n            ...newDevice,\n            status,\n            group: (deviceList[newDevice.instanceId] || {}).group\n        }\n        \n        updatedList = {\n            ...deviceList || {},\n            ...newDeviceVals,\n            _nameMapping: {\n                ...((deviceList || {})._nameMapping || {}),\n                [name]: newDevice.instanceId,\n            }\n        }\n\n        if (newDevice.type === \"group\" && newDevice.name !== \"SuperGroup\") {\n            newDevice.deviceIds.forEach((deviceId) => {\n                updatedList[deviceId] = {\n                    ...updatedList[deviceId] || {},\n                    group: newDevice.instanceId\n                }\n            })\n        }\n\n        // Update group status on device change since\n        // group changes are not advertised\n        if (newDeviceVals[newDevice.instanceId].group \n            && newDevice.type !== 'group' \n            && status.isOn !== undefined) {\n            updatedList[newDeviceVals[newDevice.instanceId].group].isOn = status.isOn\n        }\n        global.set(\"globalDeviceList\", updatedList);\n    }\n    \n    return { ...msg, updatedList};\n} catch (err) {\n    node.error(err)\n    return {msg, err}\n}",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 550,
+        "y": 760,
+        "wires": [
+            [
+                "d3c61acc435bf984"
+            ]
+        ]
+    },
+    {
+        "id": "77f2a35b96e8c937",
+        "type": "function",
+        "z": "d117d1b62f7d086e",
+        "name": "clearDeviceList",
+        "func": "global.set(\"globalDeviceList\", undefined);\nreturn {info: \"Cleared globalDeviceList\"}",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 760,
+        "y": 980,
+        "wires": [
+            [
+                "8974dc3c7d79bbde"
+            ]
+        ]
+    },
+    {
+        "id": "8974dc3c7d79bbde",
+        "type": "debug",
+        "z": "d117d1b62f7d086e",
+        "name": "log",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 950,
+        "y": 980,
+        "wires": []
+    },
+    {
+        "id": "039b8253b7696f59",
+        "type": "function",
+        "z": "d117d1b62f7d086e",
+        "name": "findAndToggle",
+        "func": "function escapeRegExp(string) {\n    return string.replace(/[.*+?^${}()|[\\]\\\\]/g, '\\\\$&'); // $& means the whole matched string\n}\n\nfunction replaceAll(str, find, replace) {\n    return str.replace(new RegExp(escapeRegExp(find), 'g'), replace);\n}\n\nconst trimCommandString = (id) => ((id === 'all')\n    ? '' : replaceAll(id.replace(/the/g, '').trim().toLowerCase(), '_', ' '));\n\nconst toggle = (isOn) => (isOn ? \"off\" : \"on\")\n\nconst getIsOn = (deviceInfo, type) => ((type === 'group') ? deviceInfo.isOn : deviceInfo[type].isOn)\n\nfunction findAndToggle (input) {\n    const device = trimCommandString(\n        input.req.params.device.toLowerCase()\n    )\n    const deviceList = global.get(\"globalDeviceList\")\n    \n    const deviceInfo = deviceList[device] || deviceList[deviceList._nameMapping[device]];\n    // node.warn(deviceList);\n    // node.warn(deviceInfo);\n\n    const type = deviceInfo.type\n    const isOn = getIsOn(deviceInfo, type)\n\n    return {\n        topic: deviceInfo.instanceId,\n        payload: toggle(isOn),\n        res: input.res\n    };\n}\n\ntry {\n    return findAndToggle(msg);\n} catch (err) {\n    node.error(err)\n    return {\n        payload: err.message,\n        res: msg.res,\n        statusCode: 500\n    }\n}",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 540,
+        "y": 340,
+        "wires": [
+            [
+                "2e2c00ca72610f7c",
+                "90b5126edab69b36",
+                "69cec7f12a58fcb1"
+            ]
+        ]
+    },
+    {
+        "id": "2e2c00ca72610f7c",
+        "type": "debug",
+        "z": "d117d1b62f7d086e",
+        "name": "log",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 710,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "039a1cb7fbd844db",
+        "type": "inject",
+        "z": "d117d1b62f7d086e",
+        "name": "atFlowStart",
+        "props": [],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 570,
+        "y": 980,
+        "wires": [
+            [
+                "77f2a35b96e8c937"
+            ]
+        ]
+    },
+    {
+        "id": "3bdafeedf173a283",
+        "type": "inject",
+        "z": "d117d1b62f7d086e",
+        "name": "the_tall_sofa_lamp",
+        "props": [
+            {
+                "p": "req.params",
+                "v": "{\"device\": \"tall sofa lamp\"}",
+                "vt": "json"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 310,
+        "y": 180,
+        "wires": [
+            [
+                "039b8253b7696f59"
+            ]
+        ]
+    },
+    {
+        "id": "bb9e3ac33d04a87a",
+        "type": "inject",
+        "z": "d117d1b62f7d086e",
+        "name": "living room",
+        "props": [
+            {
+                "p": "req.params",
+                "v": "{\"device\": \"living room\"}",
+                "vt": "json"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 340,
+        "y": 140,
+        "wires": [
+            [
+                "039b8253b7696f59"
+            ]
+        ]
+    },
+    {
+        "id": "69cec7f12a58fcb1",
+        "type": "http response",
+        "z": "d117d1b62f7d086e",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 710,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "7a86746dfb115e20",
+        "type": "comment",
+        "z": "d117d1b62f7d086e",
+        "name": "Debug nodes",
+        "info": "",
+        "x": 330,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "42c920e8031cbe7c",
+        "type": "debug",
+        "z": "d117d1b62f7d086e",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 330,
+        "y": 980,
+        "wires": []
+    },
+    {
+        "id": "b977ad43a25adb04",
+        "type": "http in",
+        "z": "d117d1b62f7d086e",
+        "name": "/dashboard_old",
+        "url": "/dashboard_old",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 920,
+        "y": 160,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "67fd39a02f5fe012",
+        "type": "function",
+        "z": "d117d1b62f7d086e",
+        "name": "formatDeviceData",
+        "func": "const formatGroups = (devices) => Object.keys(devices).reduce(\n    (prev, key) =>\n    ((devices[key].type === 'group' && devices[key].name !== 'SuperGroup') ? [\n        ...(prev || []),\n        {\n            key,\n            name: devices[key].name,\n            type: devices[key].type,\n            instanceId: devices[key].instanceId,\n            alive: devices[key].alive,\n            state: devices[key][devices[key].type] || { isOn: devices[key].isOn },\n            deviceIds: devices[key].deviceIds,\n        }]\n        : prev),\n    [],\n);\n\nconst formatDevices = (devices) => Object.keys(devices).reduce((prev, key) => ({\n    ...prev,\n    [devices[key].instanceId]: {\n        key,\n        name: devices[key].name,\n        type: devices[key].type,\n        instanceId: devices[key].instanceId,\n        alive: devices[key].alive,\n        state: devices[key][devices[key].type] || { isOn: devices[key].isOn },\n        deviceIds: devices[key].deviceIds,\n    }\n}), {});\n\nconst categorizeByDeviceType = (devices) =>\n    devices.reduce((prev, curr) => ({\n        ...prev,\n        [curr.type]: [\n            ...(prev[curr.type] || []),\n            curr,\n        ],\n    }), {});\n\nconst categorizeByGroup = (groups, devices) =>\n    groups.map((group) => ({\n        ...group,\n        devices: group.deviceIds.reduce(\n            (prev, deviceId) =>\n            ((devices[deviceId] && ['lightbulb', 'plug'].includes(devices[deviceId].type) ) ? [\n                ...prev,\n                devices[deviceId],\n            ] : prev),\n            [],\n        ),\n    }));\n\nfunction getAndSortAllDevices() {\n    const devices = global.get('globalDeviceList');\n    node.warn(devices)\n    const groups = formatGroups(devices);\n    const formattedDevices = formatDevices(devices);\n\n    // const categorizedDevices = categorizeByDeviceType(formattedDevices)\n    return categorizeByGroup(groups, formattedDevices);\n}\n\nreturn {\n    payload: getAndSortAllDevices(),\n    res: msg.res\n};",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 550,
+        "y": 560,
+        "wires": [
+            [
+                "e4fa75504074f24d"
+            ]
+        ]
+    },
+    {
+        "id": "e4fa75504074f24d",
+        "type": "debug",
+        "z": "d117d1b62f7d086e",
+        "name": "log",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 770,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "fdc62ee56dd0312e",
+        "type": "template",
+        "z": "d117d1b62f7d086e",
+        "name": "dashboard",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "{{=<% %>=}}\n\n<html lang=\"en\">\n  <head>\n    <title>Tradfri dashboard</title>\n    <meta charset=\"utf-8\" />\n    <meta name=\"viewport\" content=\"initial-scale=1, width=device-width\" />\n    <script src=\"https://unpkg.com/react@latest/umd/react.development.js\" crossorigin=\"anonymous\"></script>\n    <script src=\"https://unpkg.com/react-dom@latest/umd/react-dom.development.js\"></script>\n    <script src=\"https://unpkg.com/@mui/material@latest/umd/material-ui.development.js\" crossorigin=\"anonymous\"></script>\n    <script src=\"https://unpkg.com/babel-standalone@latest/babel.min.js\" crossorigin=\"anonymous\"></script>\n    <!-- Fonts to support Material Design -->\n    <link rel=\"stylesheet\" href=\"https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap\" />\n    <!-- Icons to support Material Design -->\n    <link rel=\"stylesheet\" href=\"https://fonts.googleapis.com/icon?family=Material+Icons\" />\n  </head>\n  <body>\n    <div id=\"root\"></div>\n    <script type=\"text/babel\">\n\nconst {\n  colors,\n  CssBaseline,\n  ThemeProvider,\n  Typography,\n  Container,\n  createTheme,\n  Box,\n  SvgIcon,\n  Link,\n  Button,\n  Card,\n  CardActions,\n  CardContent\n} = MaterialUI;\n\n// Create a theme instance.\nconst theme = createTheme({\n  palette: {\n    primary: {\n      main: '#556cd6',\n    },\n    secondary: {\n      main: '#19857b',\n    },\n    error: {\n      main: colors.red.A400,\n    },\n  },\n});\n<%={{ }}=%>\nconst data = {{{ payload }}}\n{{=<% %>=}}\nconsole.log(data)\n\n\nfunction LightBulbIcon(props) {\n  return (\n    <SvgIcon {...props}>\n      <path d=\"M9 21c0 .55.45 1 1 1h4c.55 0 1-.45 1-1v-1H9v1zm3-19C8.14 2 5 5.14 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.86-3.14-7-7-7zm2.85 11.1l-.85.6V16h-4v-2.3l-.85-.6C7.8 12.16 7 10.63 7 9c0-2.76 2.24-5 5-5s5 2.24 5 5c0 1.63-.8 3.16-2.15 4.1z\" />\n    </SvgIcon>\n  );\n}\n\nfunction ProTip() {\n  return (\n    <Typography sx={{ mt: 6, mb: 3 }} color=\"text.secondary\">\n      <LightBulbIcon sx={{ mr: 1, verticalAlign: 'top' }} />\n      Pro tip: See more{' '}\n      <Link href=\"https://mui.com/getting-started/templates/\">\n        templates\n      </Link>{' '}\n      on the MUI documentation.\n    </Typography>\n  );\n}\n\nfunction Copyright() {\n  return (\n    <Typography variant=\"body2\" color=\"text.secondary\" align=\"center\">\n      {'Copyright © '}\n      <Link color=\"inherit\" href=\"https://mui.com/\">\n        Your Website\n      </Link>{' '}\n      {new Date().getFullYear()}\n      {'.'}\n    </Typography>\n  );\n}\n\nconst DeviceCard = (props) => (\n    <Card sx={{ minWidth: 275 }}>\n      <CardContent>\n        <Typography sx={{ fontSize: 14 }} color=\"text.secondary\" gutterBottom>\n          Word of the Day\n        </Typography>\n        <Typography variant=\"h5\" component=\"div\">\n          {props.name}\n        </Typography>\n        <Typography sx={{ mb: 1.5 }} color=\"text.secondary\">\n          adjective\n        </Typography>\n        <Typography variant=\"body2\">\n          well meaning and kindly.\n          <br />\n          {'\"a benevolent smile\"'}\n        </Typography>\n      </CardContent>\n      <CardActions>\n        <Button size=\"small\">Learn More</Button>\n      </CardActions>\n    </Card>\n);\n\nconst GroupBox (props) => (\n  <Typography key={props.key} variant=\"h4\" component=\"h1\" gutterBottom>\n    {props.name}\n  </Typography>\n)\n\nfunction App() {\n  return (\n    <Container maxWidth=\"sm\">\n      <Box sx={{ my: 4 }}>\n        <Typography variant=\"h3\" component=\"h1\" gutterBottom>\n          Tradfri dashboard\n        </Typography>\n        {data.map((group) => {\n          return (<GroupBox key={group.key} props={group} />)\n        })}\n        <ProTip />\n        <Copyright />\n      </Box>\n    </Container>\n  );\n}\n\nReactDOM.render(\n    <ThemeProvider theme={theme}>\n      {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}\n      <CssBaseline />\n      <App />\n    </ThemeProvider>,\n  document.querySelector('#root'),\n);\n    </script>\n  </body>\n</html>\n<%={{ }}=%>",
+        "output": "str",
+        "x": 910,
+        "y": 100,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "1abed18d4592f022",
+        "type": "inject",
+        "z": "d117d1b62f7d086e",
+        "name": "poke",
+        "props": [],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 370,
+        "y": 520,
+        "wires": [
+            [
+                "67fd39a02f5fe012"
+            ]
+        ]
+    },
+    {
+        "id": "d7b6dccd1d42e2c8",
+        "type": "delay",
+        "z": "d117d1b62f7d086e",
+        "name": "",
+        "pauseType": "rate",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": true,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 350,
+        "y": 580,
+        "wires": [
+            [
+                "67fd39a02f5fe012"
+            ]
+        ]
+    },
+    {
+        "id": "965f2bfde3b40349",
+        "type": "inject",
+        "z": "d117d1b62f7d086e",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{}",
+        "payloadType": "json",
+        "x": 350,
+        "y": 700,
+        "wires": [
+            [
+                "0768e54ac65e1ea0"
+            ]
+        ]
+    },
+    {
+        "id": "d3c61acc435bf984",
+        "type": "debug",
+        "z": "d117d1b62f7d086e",
+        "name": "log",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 730,
+        "y": 760,
+        "wires": []
+    },
+    {
+        "id": "295e3aafec18369d",
+        "type": "comment",
+        "z": "d117d1b62f7d086e",
+        "name": "",
+        "info": "LNgwkHN\nTp5FYCJA9",
+        "x": 940,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "90b5126edab69b36",
+        "type": "tradfri-switch-control",
+        "z": "d117d1b62f7d086e",
+        "gateway": "b2fb63b9d77e15a7",
+        "name": "Update tradfri",
+        "action": "",
+        "accessories": [],
+        "groups": [],
+        "logInputErrors": true,
+        "x": 740,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "6ea96e84ddc1fb55",
+        "type": "tradfri-monitor",
+        "z": "d117d1b62f7d086e",
+        "gateway": "b2fb63b9d77e15a7",
+        "name": "Devices Updated",
+        "x": 340,
+        "y": 760,
+        "wires": [
+            [
+                "0768e54ac65e1ea0"
+            ]
+        ]
+    },
+    {
+        "id": "b1c7433538b40c08",
+        "type": "http in",
+        "z": "1a8368cbbe1982c2",
+        "name": "/pistatus",
+        "url": "/pistatus",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 140,
+        "y": 260,
+        "wires": [
+            [
+                "aec6a6ac7dcfb2fb"
+            ]
+        ]
+    },
+    {
+        "id": "8be8c824b3a1a597",
+        "type": "http response",
+        "z": "1a8368cbbe1982c2",
+        "name": "",
+        "statusCode": "200",
+        "headers": {
+            "Content-Type": " text/html; charset=UTF-8"
+        },
+        "x": 980,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "aec6a6ac7dcfb2fb",
+        "type": "exec",
+        "z": "1a8368cbbe1982c2",
+        "command": "./Scripts/systemstatus",
+        "addpay": "",
+        "append": "--extended",
+        "useSpawn": "false",
+        "timer": "",
+        "winHide": false,
+        "oldrc": false,
+        "name": "",
+        "x": 340,
+        "y": 260,
+        "wires": [
+            [
+                "7d3e34a3aa784db9",
+                "8301bc9fa3feb72b"
+            ],
+            [
+                "7d3e34a3aa784db9"
+            ],
+            [
+                "7d3e34a3aa784db9"
+            ]
+        ]
+    },
+    {
+        "id": "7d3e34a3aa784db9",
+        "type": "debug",
+        "z": "1a8368cbbe1982c2",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 650,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "0ec389efe231462f",
+        "type": "catch",
+        "z": "1a8368cbbe1982c2",
+        "name": "",
+        "scope": null,
+        "uncaught": false,
+        "x": 140,
+        "y": 460,
+        "wires": [
+            [
+                "ec1fa2cf27e2a7ea"
+            ]
+        ]
+    },
+    {
+        "id": "ec1fa2cf27e2a7ea",
+        "type": "debug",
+        "z": "1a8368cbbe1982c2",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 270,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "2641ff882a36271e",
+        "type": "status",
+        "z": "1a8368cbbe1982c2",
+        "name": "",
+        "scope": null,
+        "x": 140,
+        "y": 500,
+        "wires": [
+            [
+                "8809eb0acd5e381c"
+            ]
+        ]
+    },
+    {
+        "id": "8809eb0acd5e381c",
+        "type": "debug",
+        "z": "1a8368cbbe1982c2",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 270,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "293594f99cae323c",
+        "type": "template",
+        "z": "1a8368cbbe1982c2",
+        "name": "",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "<!doctype html>\n<html>\n  <head>\n    <meta charset=\"utf-8\">\n    <title>Pi Status</title>\n    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n    <link href=\"//cdn.muicss.com/mui-0.10.3/css/mui.min.css\" rel=\"stylesheet\" type=\"text/css\" />\n    <script src=\"//cdn.muicss.com/mui-0.10.3/js/mui.min.js\"></script>\n    <style>\n        .green: {\n            color: #3d8c40;\n        }\n        .red: {\n            color: #F44336;\n        }\n    </style>\n    <link href=\"data:image/x-icon;base64,AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAbAAACnAUBJ98BAASnAAAAIwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMAAABxAAAC5DIEvf9FBP3/NwTP/wIACukAAAByAAAACgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABACAAm/IQKH/w4BSv8LAUP/HwKF/xMCWf8MAUX/IwKN/wMAF9EAAAAhAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGALAOt/0wF//8eAn3/HAJ6/zoE2P8kA5T/HgJ//0sE//81BMj/AQAEpwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA0j8E6v81BMv/BQEn/0ME9v9CBPX/RwT//xMCWv82BM3/RwT//wMBFN4AAAAAAAAAAAAAAAAAAAAAAAAARw4CSf8OAkz/AwEX/wUBJP8rA6b/QgT0/zMDxP8FAST/BQEp/x4CgP8LAUT9AAAAQwAAAAAAAAAAAAAAAAAAAaA9BOL/CgE//ykDo/9CBPX/JgOa/wUBKf8bAnP/PgTn/ywDrf8IATf/OwTc/wAAAZ0AAAAAAAAAAAAAAAAAAAGCMQO8/x0Cev8+BOT/QgTz/0ME+f8JATr/PATe/0IE9v9ABO7/IgOL/zMEw/8AAAGHAAAAAAAAAAAAAAAAAAAAFQMAFdMFASn/IwKO/0YE//88BOD/BAEd/zYEzf9HBP//KwOn/woBO/8EAR/aAAAAGwAAAAAAAAAAAAAAAAAAAAAAAABrJgOb/xsCdv8QAk//GgJw/xsCdf8hA4b/FgJl/yECh/8lA5j/AAAAZwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGwcANN83AM//DgBH/y8Ct/9LBP//OAPU/xQAWv81AMr/BgAt3gAAABYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAQC2AFEy/wRmTP8EBh7/DwBP/wQCHf8DWkX/AF81/wAEAMsAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB/AHA2/wDIWP8AulD/AFId/wAGAP8APAv/AK9M/wDJWf8AjEL/AQMCrQAAAAAAAAAAAAAAAAAAAAAAAAAKAR8K6QDCXP8Aq1H/AJBF/wC6V/8ANRf/ALBQ/wCVRP8Ao0z/AMle/wBAHf8AAAAkAAAAAAAAAAAAAAAAAAAAGAEkDv8AoEv/AKlQ/wCvUf8AdDb/AAIBvwBcKf8ArFD/AKtR/wClT/8AQR7/AAAAPAAAAAAAAAAAAAAAAAAAAAIAAABSAQICngISBtMBBwS6AAAAbwAAAAQAAABXAQQDsQITB9MBBAOrAAAAZAAAAAkAAAAA/j8AAPwfAADwBwAA4AMAAOADAADgAwAAwAEAAMABAADgAwAA8AcAAPAHAADwBwAA8AMAAOADAADgAwAA8ccAAA==\" rel=\"icon\" type=\"image/x-icon\" />\n  </head>\n  <body style=\"background-color: #000\">\n    <div class=\"mui-container\">\n      <div class=\"mui-panel\" style=\"background-color: #000; padding-top: 4px;\">\n        <div class=\"mui-divider\"></div>\n        {{#formatted}}\n          <div class=\"mui--text-light\" style=\"font-size:12px; font-family: -apple-system, BlinkMacSystemFont, sans-serif; white-space: pre;\">{{{message}}}</div>\n          <div class=\"mui-divider\"></div>\n        {{/formatted}}\n      </div>\n    </div>\n    <div id=\"date-time\" class=\"mui--text-light-hint\" style=\"font-size: 12px;position: absolute; top:2px; right:10px;\">10:10:10</div>\n  </body>\n  <script>\n    var dt = new Date().toLocaleTimeString('sv-SE', {hour: '2-digit', minute:'2-digit'});\n    document.getElementById('date-time').innerHTML=dt;\n  </script>\n</html>\n",
+        "output": "str",
+        "x": 840,
+        "y": 180,
+        "wires": [
+            [
+                "8be8c824b3a1a597"
+            ]
+        ]
+    },
+    {
+        "id": "8301bc9fa3feb72b",
+        "type": "function",
+        "z": "1a8368cbbe1982c2",
+        "name": "",
+        "func": "const data = msg.payload.toString();\n\nconst colorizeText = (string) => \n    string.replace('[0;32m', '<span style=\"color: #449e48;\">')\n        .replace('[0;31m', '<span class=\"mui--text-danger\">')\n        .replace('[0m', '</span>')\n\nconst splitData = data.split(/\\r?\\n/);\n\nconst formatted = splitData.map((row) => {\n    const textClass = row.includes('[✗]') ? 'mui--text-danger' : 'mui--text-light'\n    return { message: colorizeText(row), textClass}\n})\nreturn {...msg, formatted};",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 680,
+        "y": 180,
+        "wires": [
+            [
+                "293594f99cae323c",
+                "982f121a99aa614e"
+            ]
+        ]
+    },
+    {
+        "id": "982f121a99aa614e",
+        "type": "debug",
+        "z": "1a8368cbbe1982c2",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 810,
+        "y": 240,
+        "wires": []
+    }
+]
