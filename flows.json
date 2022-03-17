@@ -537,7 +537,7 @@
         "id": "aec6a6ac7dcfb2fb",
         "type": "exec",
         "z": "1a8368cbbe1982c2",
-        "command": "./Scripts/systemstatus",
+        "command": "/data/symlinks/systemstatus",
         "addpay": "",
         "append": "--extended",
         "useSpawn": "false",
@@ -545,7 +545,7 @@
         "winHide": false,
         "oldrc": false,
         "name": "",
-        "x": 340,
+        "x": 360,
         "y": 260,
         "wires": [
             [
